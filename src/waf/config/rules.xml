@@ -1,0 +1,1432 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<rules desc="rule set">
+		<field attr="args" phase="1">
+			<rule action="1" id="1" method="*" rtype="xss">\.\./</rule>
+			<rule action="1" id="2" method="*" rtype="xss">\:\$</rule>
+			<rule action="1" id="3" method="*" rtype="xss">\$\{</rule>
+			<rule action="1" id="4" method="*" rtype="xss">select.+(from|limit)</rule>
+			<rule action="1" id="5" method="*" rtype="xss">(?:(union(.*?)select))</rule>
+			<rule action="1" id="6" method="*" rtype="xss">having|rongjitest</rule>
+			<rule action="1" id="7" method="*" rtype="xss">sleep\((\s*)(\d*)(\s*)\)</rule>
+			<rule action="1" id="8" method="*" rtype="xss">benchmark\((.*)\,(.*)\)</rule>
+			<rule action="1" id="9" method="*" rtype="xss">base64_decode\(</rule>
+			<rule action="1" id="10" method="*" rtype="xss">(?:from\W+information_schema\W)</rule>
+			<rule action="1" id="11" method="*" rtype="xss">(?:(?:current_)user|database|schema|connection_id)\s*\(</rule>
+			<rule action="1" id="12" method="*" rtype="xss">(?:etc\/\W*passwd)</rule>
+			<rule action="1" id="13" method="*" rtype="xss">into(\s+)+(?:dump|out)file\s*</rule>
+			<rule action="1" id="14" method="*" rtype="xss">group\s+by.+\(</rule>
+			<rule action="1" id="15" method="*" rtype="xss">xwork.MethodAccessor</rule>
+			<rule action="1" id="16" method="*" rtype="xss">(?:define|eval|file_get_contents|include|require|require_once|shell_exec|phpinfo|system|passthru|preg_\w+|execute|echo|print|print_r|var_dump|(fp)open|alert|showmodaldialog)\(</rule>
+			<rule action="1" id="17" method="*" rtype="xss">xwork\.MethodAccessor</rule>
+			<rule action="1" id="18" method="*" rtype="xss">(gopher|doc|php|glob|file|phar|zlib|ftp|ldap|dict|ogg|data)\:\/</rule>
+			<rule action="1" id="19" method="*" rtype="xss">java\.lang</rule>
+			<rule action="1" id="20" method="*" rtype="xss">\$_(GET|post|cookie|files|session|env|phplib|GLOBALS|SERVER)\[</rule>
+			<rule action="1" id="21" method="*" rtype="xss">\&lt;(iframe|script|body|img|layer|div|meta|style|base|object|input)</rule>
+			<rule action="1" id="22" method="*" rtype="xss">(onmouseover|onerror|onload)\=</rule>
+			<rule action="1" id="23" method="*" rtype="xss">(?:\n|\r)+(?:get|post|head|options|connect|put|delete|trace|propfind|propatch|mkcol|copy|move|lock|unlock)\s+</rule>
+			<rule action="1" id="24" method="*" rtype="xss">(?:\n|\r)+(?:\s+|location|refresh|(?:set-)?cookie|(X-)?(?:forwarded-(?:for|host|server)|host|via|remote-ip|remote-addr|originating-IP))\s*:</rule>
+			<rule action="1" id="25" method="*" rtype="xss">.aptitude/config</rule>
+			<rule action="1" id="26" method="*" rtype="xss">.bash_config</rule>
+			<rule action="1" id="27" method="*" rtype="xss">.bash_history</rule>
+			<rule action="1" id="28" method="*" rtype="xss">.bash_logout</rule>
+			<rule action="1" id="29" method="*" rtype="xss">.bashrc</rule>
+			<rule action="1" id="30" method="*" rtype="xss">.cache/notify-osd.log</rule>
+			<rule action="1" id="31" method="*" rtype="xss">.config/odesk/odesk team.conf</rule>
+			<rule action="1" id="32" method="*" rtype="xss">.cshrc</rule>
+			<rule action="1" id="33" method="*" rtype="xss">.gitconfig</rule>
+			<rule action="1" id="34" method="*" rtype="xss">.hplip/hplip.conf</rule>
+			<rule action="1" id="35" method="*" rtype="xss">.ksh_history</rule>
+			<rule action="1" id="36" method="*" rtype="xss">.my.cnf</rule>
+			<rule action="1" id="37" method="*" rtype="xss">.mysql_history</rule>
+			<rule action="1" id="38" method="*" rtype="xss">.nano_history</rule>
+			<rule action="1" id="39" method="*" rtype="xss">.profile</rule>
+			<rule action="1" id="40" method="*" rtype="xss">.psql_history</rule>
+			<rule action="1" id="41" method="*" rtype="xss">.sqlite_history</rule>
+			<rule action="1" id="42" method="*" rtype="xss">.ssh/authorized_keys</rule>
+			<rule action="1" id="43" method="*" rtype="xss">.ssh/config</rule>
+			<rule action="1" id="44" method="*" rtype="xss">.ssh/id_dsa</rule>
+			<rule action="1" id="45" method="*" rtype="xss">.ssh/id_dsa.pub</rule>
+			<rule action="1" id="46" method="*" rtype="xss">.ssh/identity</rule>
+			<rule action="1" id="47" method="*" rtype="xss">.ssh/identity.pub</rule>
+			<rule action="1" id="48" method="*" rtype="xss">.ssh/id_rsa</rule>
+			<rule action="1" id="49" method="*" rtype="xss">.ssh/id_rsa.pub</rule>
+			<rule action="1" id="50" method="*" rtype="xss">.ssh/known_hosts</rule>
+			<rule action="1" id="51" method="*" rtype="xss">.subversion/servers</rule>
+			<rule action="1" id="52" method="*" rtype="xss">.tconn/tconn.conf</rule>
+			<rule action="1" id="53" method="*" rtype="xss">.vidalia/vidalia.conf</rule>
+			<rule action="1" id="54" method="*" rtype="xss">.xauthority</rule>
+			<rule action="1" id="55" method="*" rtype="xss">.zshrc</rule>
+			<rule action="1" id="56" method="*" rtype="xss">etc/php.ini</rule>
+			<rule action="1" id="57" method="*" rtype="xss">bin/php.ini</rule>
+			<rule action="1" id="58" method="*" rtype="xss">etc/httpd/php.ini</rule>
+			<rule action="1" id="59" method="*" rtype="xss">usr/lib/php.ini</rule>
+			<rule action="1" id="60" method="*" rtype="xss">usr/lib/php/php.ini</rule>
+			<rule action="1" id="61" method="*" rtype="xss">usr/local/etc/php.ini</rule>
+			<rule action="1" id="62" method="*" rtype="xss">usr/local/lib/php.ini</rule>
+			<rule action="1" id="63" method="*" rtype="xss">usr/local/php/lib/php.ini</rule>
+			<rule action="1" id="64" method="*" rtype="xss">usr/local/php4/lib/php.ini</rule>
+			<rule action="1" id="65" method="*" rtype="xss">usr/local/php5/lib/php.ini</rule>
+			<rule action="1" id="66" method="*" rtype="xss">usr/local/apache/conf/php.ini</rule>
+			<rule action="1" id="67" method="*" rtype="xss">etc/php4.4/fcgi/php.ini</rule>
+			<rule action="1" id="68" method="*" rtype="xss">etc/php4/apache/php.ini</rule>
+			<rule action="1" id="69" method="*" rtype="xss">etc/php4/apache2/php.ini</rule>
+			<rule action="1" id="70" method="*" rtype="xss">etc/php5/apache/php.ini</rule>
+			<rule action="1" id="71" method="*" rtype="xss">etc/php5/apache2/php.ini</rule>
+			<rule action="1" id="72" method="*" rtype="xss">etc/php/php.ini</rule>
+			<rule action="1" id="73" method="*" rtype="xss">etc/php/php4/php.ini</rule>
+			<rule action="1" id="74" method="*" rtype="xss">etc/php/apache/php.ini</rule>
+			<rule action="1" id="75" method="*" rtype="xss">etc/php/apache2/php.ini</rule>
+			<rule action="1" id="76" method="*" rtype="xss">web/conf/php.ini</rule>
+			<rule action="1" id="77" method="*" rtype="xss">usr/local/zend/etc/php.ini</rule>
+			<rule action="1" id="78" method="*" rtype="xss">opt/xampp/etc/php.ini</rule>
+			<rule action="1" id="79" method="*" rtype="xss">var/local/www/conf/php.ini</rule>
+			<rule action="1" id="80" method="*" rtype="xss">etc/php/cgi/php.ini</rule>
+			<rule action="1" id="81" method="*" rtype="xss">etc/php4/cgi/php.ini</rule>
+			<rule action="1" id="82" method="*" rtype="xss">etc/php5/cgi/php.ini</rule>
+			<rule action="1" id="83" method="*" rtype="xss">home2/bin/stable/apache/php.ini</rule>
+			<rule action="1" id="84" method="*" rtype="xss">home/bin/stable/apache/php.ini</rule>
+			<rule action="1" id="85" method="*" rtype="xss">etc/httpd/conf.d/php.conf</rule>
+			<rule action="1" id="86" method="*" rtype="xss">php5/php.ini</rule>
+			<rule action="1" id="87" method="*" rtype="xss">php4/php.ini</rule>
+			<rule action="1" id="88" method="*" rtype="xss">php/php.ini</rule>
+			<rule action="1" id="89" method="*" rtype="xss">windows/php.ini</rule>
+			<rule action="1" id="90" method="*" rtype="xss">winnt/php.ini</rule>
+			<rule action="1" id="91" method="*" rtype="xss">apache/php/php.ini</rule>
+			<rule action="1" id="92" method="*" rtype="xss">xampp/apache/bin/php.ini</rule>
+			<rule action="1" id="93" method="*" rtype="xss">netserver/bin/stable/apache/php.ini</rule>
+			<rule action="1" id="94" method="*" rtype="xss">volumes/macintosh_hd1/usr/local/php/lib/php.ini</rule>
+			<rule action="1" id="95" method="*" rtype="xss">etc/mono/1.0/machine.config</rule>
+			<rule action="1" id="96" method="*" rtype="xss">etc/mono/2.0/machine.config</rule>
+			<rule action="1" id="97" method="*" rtype="xss">etc/mono/2.0/web.config</rule>
+			<rule action="1" id="98" method="*" rtype="xss">etc/mono/config</rule>
+			<rule action="1" id="99" method="*" rtype="xss">usr/local/cpanel/logs/stats_log</rule>
+			<rule action="1" id="100" method="*" rtype="xss">usr/local/cpanel/logs/access_log</rule>
+			<rule action="1" id="101" method="*" rtype="xss">usr/local/cpanel/logs/error_log</rule>
+			<rule action="1" id="102" method="*" rtype="xss">usr/local/cpanel/logs/license_log</rule>
+			<rule action="1" id="103" method="*" rtype="xss">usr/local/cpanel/logs/login_log</rule>
+			<rule action="1" id="104" method="*" rtype="xss">var/cpanel/cpanel.config</rule>
+			<rule action="1" id="105" method="*" rtype="xss">var/log/sw-cp-server/error_log</rule>
+			<rule action="1" id="106" method="*" rtype="xss">usr/local/psa/admin/logs/httpsd_access_log</rule>
+			<rule action="1" id="107" method="*" rtype="xss">usr/local/psa/admin/logs/panel.log</rule>
+			<rule action="1" id="108" method="*" rtype="xss">var/log/sso/sso.log</rule>
+			<rule action="1" id="109" method="*" rtype="xss">usr/local/psa/admin/conf/php.ini</rule>
+			<rule action="1" id="110" method="*" rtype="xss">etc/sw-cp-server/applications.d/plesk.conf</rule>
+			<rule action="1" id="111" method="*" rtype="xss">usr/local/psa/admin/conf/site_isolation_settings.ini</rule>
+			<rule action="1" id="112" method="*" rtype="xss">usr/local/sb/config</rule>
+			<rule action="1" id="113" method="*" rtype="xss">etc/sw-cp-server/applications.d/00-sso-cpserver.conf</rule>
+			<rule action="1" id="114" method="*" rtype="xss">etc/sso/sso_config.ini</rule>
+			<rule action="1" id="115" method="*" rtype="xss">etc/mysql/conf.d/old_passwords.cnf</rule>
+			<rule action="1" id="116" method="*" rtype="xss">var/log/mysql/mysql-bin.log</rule>
+			<rule action="1" id="117" method="*" rtype="xss">var/log/mysql/mysql-bin.index</rule>
+			<rule action="1" id="118" method="*" rtype="xss">var/log/mysql/data/mysql-bin.index</rule>
+			<rule action="1" id="119" method="*" rtype="xss">var/log/mysql.log</rule>
+			<rule action="1" id="120" method="*" rtype="xss">var/log/mysql.err</rule>
+			<rule action="1" id="121" method="*" rtype="xss">var/log/mysqlderror.log</rule>
+			<rule action="1" id="122" method="*" rtype="xss">var/log/mysql/mysql.log</rule>
+			<rule action="1" id="123" method="*" rtype="xss">var/log/mysql/mysql-slow.log</rule>
+			<rule action="1" id="124" method="*" rtype="xss">var/log/mysql-bin.index</rule>
+			<rule action="1" id="125" method="*" rtype="xss">var/log/data/mysql-bin.index</rule>
+			<rule action="1" id="126" method="*" rtype="xss">var/mysql.log</rule>
+			<rule action="1" id="127" method="*" rtype="xss">var/mysql-bin.index</rule>
+			<rule action="1" id="128" method="*" rtype="xss">var/data/mysql-bin.index</rule>
+			<rule action="1" id="129" method="*" rtype="xss">program files/mysql/mysql server 5.0/data/{host}.err</rule>
+			<rule action="1" id="130" method="*" rtype="xss">program files/mysql/mysql server 5.0/data/mysql.log</rule>
+			<rule action="1" id="131" method="*" rtype="xss">program files/mysql/mysql server 5.0/data/mysql.err</rule>
+			<rule action="1" id="132" method="*" rtype="xss">program files/mysql/mysql server 5.0/data/mysql-bin.log</rule>
+			<rule action="1" id="133" method="*" rtype="xss">program files/mysql/mysql server 5.0/data/mysql-bin.index</rule>
+			<rule action="1" id="134" method="*" rtype="xss">program files/mysql/data/{host}.err</rule>
+			<rule action="1" id="135" method="*" rtype="xss">program files/mysql/data/mysql.log</rule>
+			<rule action="1" id="136" method="*" rtype="xss">program files/mysql/data/mysql.err</rule>
+			<rule action="1" id="137" method="*" rtype="xss">program files/mysql/data/mysql-bin.log</rule>
+			<rule action="1" id="138" method="*" rtype="xss">program files/mysql/data/mysql-bin.index</rule>
+			<rule action="1" id="139" method="*" rtype="xss">mysql/data/{host}.err</rule>
+			<rule action="1" id="140" method="*" rtype="xss">mysql/data/mysql.log</rule>
+			<rule action="1" id="141" method="*" rtype="xss">mysql/data/mysql.err</rule>
+			<rule action="1" id="142" method="*" rtype="xss">mysql/data/mysql-bin.log</rule>
+			<rule action="1" id="143" method="*" rtype="xss">mysql/data/mysql-bin.index</rule>
+			<rule action="1" id="144" method="*" rtype="xss">usr/local/mysql/data/mysql.log</rule>
+			<rule action="1" id="145" method="*" rtype="xss">usr/local/mysql/data/mysql.err</rule>
+			<rule action="1" id="146" method="*" rtype="xss">usr/local/mysql/data/mysql-bin.log</rule>
+			<rule action="1" id="147" method="*" rtype="xss">usr/local/mysql/data/mysql-slow.log</rule>
+			<rule action="1" id="148" method="*" rtype="xss">usr/local/mysql/data/mysqlderror.log</rule>
+			<rule action="1" id="149" method="*" rtype="xss">usr/local/mysql/data/{host}.err</rule>
+			<rule action="1" id="150" method="*" rtype="xss">usr/local/mysql/data/mysql-bin.index</rule>
+			<rule action="1" id="151" method="*" rtype="xss">var/lib/mysql/my.cnf</rule>
+			<rule action="1" id="152" method="*" rtype="xss">etc/mysql/my.cnf</rule>
+			<rule action="1" id="153" method="*" rtype="xss">etc/my.cnf</rule>
+			<rule action="1" id="154" method="*" rtype="xss">program files/mysql/mysql server 5.0/my.ini</rule>
+			<rule action="1" id="155" method="*" rtype="xss">program files/mysql/mysql server 5.0/my.cnf</rule>
+			<rule action="1" id="156" method="*" rtype="xss">program files/mysql/my.ini</rule>
+			<rule action="1" id="157" method="*" rtype="xss">program files/mysql/my.cnf</rule>
+			<rule action="1" id="158" method="*" rtype="xss">mysql/my.ini</rule>
+			<rule action="1" id="159" method="*" rtype="xss">mysql/my.cnf</rule>
+			<rule action="1" id="160" method="*" rtype="xss">mysql/bin/my.ini</rule>
+			<rule action="1" id="161" method="*" rtype="xss">var/postgresql/log/postgresql.log</rule>
+			<rule action="1" id="162" method="*" rtype="xss">var/log/postgresql/postgresql.log</rule>
+			<rule action="1" id="163" method="*" rtype="xss">var/log/postgres/pg_backup.log</rule>
+			<rule action="1" id="164" method="*" rtype="xss">var/log/postgres/postgres.log</rule>
+			<rule action="1" id="165" method="*" rtype="xss">var/log/postgresql.log</rule>
+			<rule action="1" id="166" method="*" rtype="xss">var/log/pgsql/pgsql.log</rule>
+			<rule action="1" id="167" method="*" rtype="xss">var/log/postgresql/postgresql-8.1-main.log</rule>
+			<rule action="1" id="168" method="*" rtype="xss">var/log/postgresql/postgresql-8.3-main.log</rule>
+			<rule action="1" id="169" method="*" rtype="xss">var/log/postgresql/postgresql-8.4-main.log</rule>
+			<rule action="1" id="170" method="*" rtype="xss">var/log/postgresql/postgresql-9.0-main.log</rule>
+			<rule action="1" id="171" method="*" rtype="xss">var/log/postgresql/postgresql-9.1-main.log</rule>
+			<rule action="1" id="172" method="*" rtype="xss">var/log/pgsql8.log</rule>
+			<rule action="1" id="173" method="*" rtype="xss">var/log/postgresql/postgres.log</rule>
+			<rule action="1" id="174" method="*" rtype="xss">var/log/pgsql_log</rule>
+			<rule action="1" id="175" method="*" rtype="xss">var/log/postgresql/main.log</rule>
+			<rule action="1" id="176" method="*" rtype="xss">var/log/cron/var/log/postgres.log</rule>
+			<rule action="1" id="177" method="*" rtype="xss">usr/internet/pgsql/data/postmaster.log</rule>
+			<rule action="1" id="178" method="*" rtype="xss">usr/local/pgsql/data/postgresql.log</rule>
+			<rule action="1" id="179" method="*" rtype="xss">usr/local/pgsql/data/pg_log</rule>
+			<rule action="1" id="180" method="*" rtype="xss">postgresql/log/pgadmin.log</rule>
+			<rule action="1" id="181" method="*" rtype="xss">var/lib/pgsql/data/postgresql.conf</rule>
+			<rule action="1" id="182" method="*" rtype="xss">var/postgresql/db/postgresql.conf</rule>
+			<rule action="1" id="183" method="*" rtype="xss">var/nm2/postgresql.conf</rule>
+			<rule action="1" id="184" method="*" rtype="xss">usr/local/pgsql/data/postgresql.conf</rule>
+			<rule action="1" id="185" method="*" rtype="xss">usr/local/pgsql/data/pg_hba.conf</rule>
+			<rule action="1" id="186" method="*" rtype="xss">usr/internet/pgsql/data/pg_hba.conf</rule>
+			<rule action="1" id="187" method="*" rtype="xss">usr/local/pgsql/data/passwd</rule>
+			<rule action="1" id="188" method="*" rtype="xss">usr/local/pgsql/bin/pg_passwd</rule>
+			<rule action="1" id="189" method="*" rtype="xss">etc/postgresql/postgresql.conf</rule>
+			<rule action="1" id="190" method="*" rtype="xss">etc/postgresql/pg_hba.conf</rule>
+			<rule action="1" id="191" method="*" rtype="xss">home/postgres/data/postgresql.conf</rule>
+			<rule action="1" id="192" method="*" rtype="xss">home/postgres/data/pg_version</rule>
+			<rule action="1" id="193" method="*" rtype="xss">home/postgres/data/pg_ident.conf</rule>
+			<rule action="1" id="194" method="*" rtype="xss">home/postgres/data/pg_hba.conf</rule>
+			<rule action="1" id="195" method="*" rtype="xss">program files/postgresql/8.3/data/pg_hba.conf</rule>
+			<rule action="1" id="196" method="*" rtype="xss">program files/postgresql/8.3/data/pg_ident.conf</rule>
+			<rule action="1" id="197" method="*" rtype="xss">program files/postgresql/8.3/data/postgresql.conf</rule>
+			<rule action="1" id="198" method="*" rtype="xss">program files/postgresql/8.4/data/pg_hba.conf</rule>
+			<rule action="1" id="199" method="*" rtype="xss">program files/postgresql/8.4/data/pg_ident.conf</rule>
+			<rule action="1" id="200" method="*" rtype="xss">program files/postgresql/8.4/data/postgresql.conf</rule>
+			<rule action="1" id="201" method="*" rtype="xss">program files/postgresql/9.0/data/pg_hba.conf</rule>
+			<rule action="1" id="202" method="*" rtype="xss">program files/postgresql/9.0/data/pg_ident.conf</rule>
+			<rule action="1" id="203" method="*" rtype="xss">program files/postgresql/9.0/data/postgresql.conf</rule>
+			<rule action="1" id="204" method="*" rtype="xss">program files/postgresql/9.1/data/pg_hba.conf</rule>
+			<rule action="1" id="205" method="*" rtype="xss">program files/postgresql/9.1/data/pg_ident.conf</rule>
+			<rule action="1" id="206" method="*" rtype="xss">program files/postgresql/9.1/data/postgresql.conf</rule>
+			<rule action="1" id="207" method="*" rtype="xss">wamp/logs/access.log</rule>
+			<rule action="1" id="208" method="*" rtype="xss">wamp/logs/apache_error.log</rule>
+			<rule action="1" id="209" method="*" rtype="xss">wamp/logs/genquery.log</rule>
+			<rule action="1" id="210" method="*" rtype="xss">wamp/logs/mysql.log</rule>
+			<rule action="1" id="211" method="*" rtype="xss">wamp/logs/slowquery.log</rule>
+			<rule action="1" id="212" method="*" rtype="xss">wamp/bin/apache/apache2.2.22/logs/access.log</rule>
+			<rule action="1" id="213" method="*" rtype="xss">wamp/bin/apache/apache2.2.22/logs/error.log</rule>
+			<rule action="1" id="214" method="*" rtype="xss">wamp/bin/apache/apache2.2.21/logs/access.log</rule>
+			<rule action="1" id="215" method="*" rtype="xss">wamp/bin/apache/apache2.2.21/logs/error.log</rule>
+			<rule action="1" id="216" method="*" rtype="xss">wamp/bin/mysql/mysql5.5.24/data/mysql-bin.index</rule>
+			<rule action="1" id="217" method="*" rtype="xss">wamp/bin/mysql/mysql5.5.16/data/mysql-bin.index</rule>
+			<rule action="1" id="218" method="*" rtype="xss">wamp/bin/apache/apache2.2.21/conf/httpd.conf</rule>
+			<rule action="1" id="219" method="*" rtype="xss">wamp/bin/apache/apache2.2.22/conf/httpd.conf</rule>
+			<rule action="1" id="220" method="*" rtype="xss">wamp/bin/apache/apache2.2.21/wampserver.conf</rule>
+			<rule action="1" id="221" method="*" rtype="xss">wamp/bin/apache/apache2.2.22/wampserver.conf</rule>
+			<rule action="1" id="222" method="*" rtype="xss">wamp/bin/apache/apache2.2.22/conf/wampserver.conf</rule>
+			<rule action="1" id="223" method="*" rtype="xss">wamp/bin/mysql/mysql5.5.24/my.ini</rule>
+			<rule action="1" id="224" method="*" rtype="xss">wamp/bin/mysql/mysql5.5.24/wampserver.conf</rule>
+			<rule action="1" id="225" method="*" rtype="xss">wamp/bin/mysql/mysql5.5.16/my.ini</rule>
+			<rule action="1" id="226" method="*" rtype="xss">wamp/bin/mysql/mysql5.5.16/wampserver.conf</rule>
+			<rule action="1" id="227" method="*" rtype="xss">wamp/bin/php/php5.3.8/php.ini</rule>
+			<rule action="1" id="228" method="*" rtype="xss">wamp/bin/php/php5.4.3/php.ini</rule>
+			<rule action="1" id="229" method="*" rtype="xss">xampp/apache/logs/access.log</rule>
+			<rule action="1" id="230" method="*" rtype="xss">xampp/apache/logs/error.log</rule>
+			<rule action="1" id="231" method="*" rtype="xss">xampp/mysql/data/mysql-bin.index</rule>
+			<rule action="1" id="232" method="*" rtype="xss">xampp/mysql/data/mysql.err</rule>
+			<rule action="1" id="233" method="*" rtype="xss">xampp/mysql/data/{host}.err</rule>
+			<rule action="1" id="234" method="*" rtype="xss">xampp/sendmail/sendmail.log</rule>
+			<rule action="1" id="235" method="*" rtype="xss">xampp/apache/conf/httpd.conf</rule>
+			<rule action="1" id="236" method="*" rtype="xss">xampp/filezillaftp/filezilla server.xml</rule>
+			<rule action="1" id="237" method="*" rtype="xss">xampp/mercurymail/mercury.ini</rule>
+			<rule action="1" id="238" method="*" rtype="xss">xampp/php/php.ini</rule>
+			<rule action="1" id="239" method="*" rtype="xss">xampp/phpmyadmin/config.inc.php</rule>
+			<rule action="1" id="240" method="*" rtype="xss">xampp/sendmail/sendmail.ini</rule>
+			<rule action="1" id="241" method="*" rtype="xss">xampp/webalizer/webalizer.conf</rule>
+			<rule action="1" id="242" method="*" rtype="xss">opt/lampp/etc/httpd.conf</rule>
+			<rule action="1" id="243" method="*" rtype="xss">xampp/htdocs/aca.txt</rule>
+			<rule action="1" id="244" method="*" rtype="xss">xampp/htdocs/admin.php</rule>
+			<rule action="1" id="245" method="*" rtype="xss">xampp/htdocs/leer.txt</rule>
+			<rule action="1" id="246" method="*" rtype="xss">usr/local/apache/logs/audit_log</rule>
+			<rule action="1" id="247" method="*" rtype="xss">usr/local/apache2/logs/audit_log</rule>
+			<rule action="1" id="248" method="*" rtype="xss">logs/security_debug_log</rule>
+			<rule action="1" id="249" method="*" rtype="xss">logs/security_log</rule>
+			<rule action="1" id="250" method="*" rtype="xss">usr/local/apache/conf/modsec.conf</rule>
+			<rule action="1" id="251" method="*" rtype="xss">usr/local/apache2/conf/modsec.conf</rule>
+			<rule action="1" id="252" method="*" rtype="xss">winnt/system32/logfiles/msftpsvc</rule>
+			<rule action="1" id="253" method="*" rtype="xss">winnt/system32/logfiles/msftpsvc1</rule>
+			<rule action="1" id="254" method="*" rtype="xss">winnt/system32/logfiles/msftpsvc2</rule>
+			<rule action="1" id="255" method="*" rtype="xss">windows/system32/logfiles/msftpsvc</rule>
+			<rule action="1" id="256" method="*" rtype="xss">windows/system32/logfiles/msftpsvc1</rule>
+			<rule action="1" id="257" method="*" rtype="xss">windows/system32/logfiles/msftpsvc2</rule>
+			<rule action="1" id="258" method="*" rtype="xss">etc/logrotate.d/proftpd</rule>
+			<rule action="1" id="259" method="*" rtype="xss">www/logs/proftpd.system.log</rule>
+			<rule action="1" id="260" method="*" rtype="xss">var/log/proftpd</rule>
+			<rule action="1" id="261" method="*" rtype="xss">var/log/proftpd/xferlog.legacy</rule>
+			<rule action="1" id="262" method="*" rtype="xss">var/log/proftpd.access_log</rule>
+			<rule action="1" id="263" method="*" rtype="xss">var/log/proftpd.xferlog</rule>
+			<rule action="1" id="264" method="*" rtype="xss">etc/pam.d/proftpd</rule>
+			<rule action="1" id="265" method="*" rtype="xss">etc/proftp.conf</rule>
+			<rule action="1" id="266" method="*" rtype="xss">etc/protpd/proftpd.conf</rule>
+			<rule action="1" id="267" method="*" rtype="xss">etc/vhcs2/proftpd/proftpd.conf</rule>
+			<rule action="1" id="268" method="*" rtype="xss">etc/proftpd/modules.conf</rule>
+			<rule action="1" id="269" method="*" rtype="xss">var/log/vsftpd.log</rule>
+			<rule action="1" id="270" method="*" rtype="xss">etc/vsftpd.chroot_list</rule>
+			<rule action="1" id="271" method="*" rtype="xss">etc/logrotate.d/vsftpd.log</rule>
+			<rule action="1" id="272" method="*" rtype="xss">etc/vsftpd/vsftpd.conf</rule>
+			<rule action="1" id="273" method="*" rtype="xss">etc/vsftpd.conf</rule>
+			<rule action="1" id="274" method="*" rtype="xss">etc/chrootusers</rule>
+			<rule action="1" id="275" method="*" rtype="xss">var/log/xferlog</rule>
+			<rule action="1" id="276" method="*" rtype="xss">var/adm/log/xferlog</rule>
+			<rule action="1" id="277" method="*" rtype="xss">etc/wu-ftpd/ftpaccess</rule>
+			<rule action="1" id="278" method="*" rtype="xss">etc/wu-ftpd/ftphosts</rule>
+			<rule action="1" id="279" method="*" rtype="xss">etc/wu-ftpd/ftpusers</rule>
+			<rule action="1" id="280" method="*" rtype="xss">var/log/pure-ftpd/pure-ftpd.log</rule>
+			<rule action="1" id="281" method="*" rtype="xss">logs/pure-ftpd.log</rule>
+			<rule action="1" id="282" method="*" rtype="xss">var/log/pureftpd.log</rule>
+			<rule action="1" id="283" method="*" rtype="xss">usr/sbin/pure-config.pl</rule>
+			<rule action="1" id="284" method="*" rtype="xss">usr/etc/pure-ftpd.conf</rule>
+			<rule action="1" id="285" method="*" rtype="xss">etc/pure-ftpd/pure-ftpd.conf</rule>
+			<rule action="1" id="286" method="*" rtype="xss">usr/local/etc/pure-ftpd.conf</rule>
+			<rule action="1" id="287" method="*" rtype="xss">usr/local/etc/pureftpd.pdb</rule>
+			<rule action="1" id="288" method="*" rtype="xss">usr/local/pureftpd/etc/pureftpd.pdb</rule>
+			<rule action="1" id="289" method="*" rtype="xss">usr/local/pureftpd/sbin/pure-config.pl</rule>
+			<rule action="1" id="290" method="*" rtype="xss">usr/local/pureftpd/etc/pure-ftpd.conf</rule>
+			<rule action="1" id="291" method="*" rtype="xss">etc/pure-ftpd.conf</rule>
+			<rule action="1" id="292" method="*" rtype="xss">etc/pure-ftpd/pure-ftpd.pdb</rule>
+			<rule action="1" id="293" method="*" rtype="xss">etc/pureftpd.pdb</rule>
+			<rule action="1" id="294" method="*" rtype="xss">etc/pureftpd.passwd</rule>
+			<rule action="1" id="295" method="*" rtype="xss">etc/pure-ftpd/pureftpd.pdb</rule>
+			<rule action="1" id="296" method="*" rtype="xss">usr/ports/ftp/pure-ftpd/pure-ftpd.conf</rule>
+			<rule action="1" id="297" method="*" rtype="xss">usr/ports/ftp/pure-ftpd/pureftpd.pdb</rule>
+			<rule action="1" id="298" method="*" rtype="xss">usr/ports/ftp/pure-ftpd/pureftpd.passwd</rule>
+			<rule action="1" id="299" method="*" rtype="xss">usr/ports/net/pure-ftpd/pure-ftpd.conf</rule>
+			<rule action="1" id="300" method="*" rtype="xss">usr/ports/net/pure-ftpd/pureftpd.pdb</rule>
+			<rule action="1" id="301" method="*" rtype="xss">usr/ports/net/pure-ftpd/pureftpd.passwd</rule>
+			<rule action="1" id="302" method="*" rtype="xss">usr/pkgsrc/net/pureftpd/pure-ftpd.conf</rule>
+			<rule action="1" id="303" method="*" rtype="xss">usr/pkgsrc/net/pureftpd/pureftpd.pdb</rule>
+			<rule action="1" id="304" method="*" rtype="xss">usr/pkgsrc/net/pureftpd/pureftpd.passwd</rule>
+			<rule action="1" id="305" method="*" rtype="xss">usr/ports/contrib/pure-ftpd/pure-ftpd.conf</rule>
+			<rule action="1" id="306" method="*" rtype="xss">usr/ports/contrib/pure-ftpd/pureftpd.pdb</rule>
+			<rule action="1" id="307" method="*" rtype="xss">usr/ports/contrib/pure-ftpd/pureftpd.passwd</rule>
+			<rule action="1" id="308" method="*" rtype="xss">var/log/muddleftpd</rule>
+			<rule action="1" id="309" method="*" rtype="xss">usr/sbin/mudlogd</rule>
+			<rule action="1" id="310" method="*" rtype="xss">etc/muddleftpd/mudlog</rule>
+			<rule action="1" id="311" method="*" rtype="xss">etc/muddleftpd.com</rule>
+			<rule action="1" id="312" method="*" rtype="xss">etc/muddleftpd/mudlogd.conf</rule>
+			<rule action="1" id="313" method="*" rtype="xss">etc/muddleftpd/muddleftpd.conf</rule>
+			<rule action="1" id="314" method="*" rtype="xss">var/log/muddleftpd.conf</rule>
+			<rule action="1" id="315" method="*" rtype="xss">usr/sbin/mudpasswd</rule>
+			<rule action="1" id="316" method="*" rtype="xss">etc/muddleftpd/muddleftpd.passwd</rule>
+			<rule action="1" id="317" method="*" rtype="xss">etc/muddleftpd/passwd</rule>
+			<rule action="1" id="318" method="*" rtype="xss">var/log/ftp-proxy/ftp-proxy.log</rule>
+			<rule action="1" id="319" method="*" rtype="xss">var/log/ftp-proxy</rule>
+			<rule action="1" id="320" method="*" rtype="xss">var/log/ftplog</rule>
+			<rule action="1" id="321" method="*" rtype="xss">etc/logrotate.d/ftp</rule>
+			<rule action="1" id="322" method="*" rtype="xss">etc/ftpchroot</rule>
+			<rule action="1" id="323" method="*" rtype="xss">etc/ftphosts</rule>
+			<rule action="1" id="324" method="*" rtype="xss">etc/ftpusers</rule>
+			<rule action="1" id="325" method="*" rtype="xss">var/log/exim_mainlog</rule>
+			<rule action="1" id="326" method="*" rtype="xss">var/log/exim/mainlog</rule>
+			<rule action="1" id="327" method="*" rtype="xss">var/log/maillog</rule>
+			<rule action="1" id="328" method="*" rtype="xss">var/log/exim_paniclog</rule>
+			<rule action="1" id="329" method="*" rtype="xss">var/log/exim/paniclog</rule>
+			<rule action="1" id="330" method="*" rtype="xss">var/log/exim/rejectlog</rule>
+			<rule action="1" id="331" method="*" rtype="xss">var/log/exim_rejectlog</rule>
+			<rule action="1" id="332" method="*" rtype="xss">winnt/system32/logfiles/smtpsvc</rule>
+			<rule action="1" id="333" method="*" rtype="xss">winnt/system32/logfiles/smtpsvc1</rule>
+			<rule action="1" id="334" method="*" rtype="xss">winnt/system32/logfiles/smtpsvc2</rule>
+			<rule action="1" id="335" method="*" rtype="xss">winnt/system32/logfiles/smtpsvc3</rule>
+			<rule action="1" id="336" method="*" rtype="xss">winnt/system32/logfiles/smtpsvc4</rule>
+			<rule action="1" id="337" method="*" rtype="xss">winnt/system32/logfiles/smtpsvc5</rule>
+			<rule action="1" id="338" method="*" rtype="xss">windows/system32/logfiles/smtpsvc</rule>
+			<rule action="1" id="339" method="*" rtype="xss">windows/system32/logfiles/smtpsvc1</rule>
+			<rule action="1" id="340" method="*" rtype="xss">windows/system32/logfiles/smtpsvc2</rule>
+			<rule action="1" id="341" method="*" rtype="xss">windows/system32/logfiles/smtpsvc3</rule>
+			<rule action="1" id="342" method="*" rtype="xss">windows/system32/logfiles/smtpsvc4</rule>
+			<rule action="1" id="343" method="*" rtype="xss">windows/system32/logfiles/smtpsvc5</rule>
+			<rule action="1" id="344" method="*" rtype="xss">etc/osxhttpd/osxhttpd.conf</rule>
+			<rule action="1" id="345" method="*" rtype="xss">system/library/webobjects/adaptors/apache2.2/apache.conf</rule>
+			<rule action="1" id="346" method="*" rtype="xss">library/webserver/documents/.htaccess</rule>
+			<rule action="1" id="347" method="*" rtype="xss">etc/apache2/sites-available/default</rule>
+			<rule action="1" id="348" method="*" rtype="xss">etc/apache2/sites-available/default-ssl</rule>
+			<rule action="1" id="349" method="*" rtype="xss">etc/apache2/sites-enabled/000-default</rule>
+			<rule action="1" id="350" method="*" rtype="xss">etc/apache2/sites-enabled/default</rule>
+			<rule action="1" id="351" method="*" rtype="xss">etc/apache2/apache2.conf</rule>
+			<rule action="1" id="352" method="*" rtype="xss">etc/apache2/ports.conf</rule>
+			<rule action="1" id="353" method="*" rtype="xss">usr/local/etc/apache/httpd.conf</rule>
+			<rule action="1" id="354" method="*" rtype="xss">usr/pkg/etc/httpd/httpd.conf</rule>
+			<rule action="1" id="355" method="*" rtype="xss">usr/pkg/etc/httpd/httpd-default.conf</rule>
+			<rule action="1" id="356" method="*" rtype="xss">usr/pkg/etc/httpd/httpd-vhosts.conf</rule>
+			<rule action="1" id="357" method="*" rtype="xss">etc/httpd/mod_php.conf</rule>
+			<rule action="1" id="358" method="*" rtype="xss">etc/httpd/extra/httpd-ssl.conf</rule>
+			<rule action="1" id="359" method="*" rtype="xss">etc/rc.d/rc.httpd</rule>
+			<rule action="1" id="360" method="*" rtype="xss">usr/local/apache/conf/httpd.conf.default</rule>
+			<rule action="1" id="361" method="*" rtype="xss">usr/local/apache/conf/access.conf</rule>
+			<rule action="1" id="362" method="*" rtype="xss">usr/local/apache22/conf/httpd.conf</rule>
+			<rule action="1" id="363" method="*" rtype="xss">usr/local/apache22/httpd.conf</rule>
+			<rule action="1" id="364" method="*" rtype="xss">usr/local/etc/apache22/conf/httpd.conf</rule>
+			<rule action="1" id="365" method="*" rtype="xss">usr/local/apps/apache22/conf/httpd.conf</rule>
+			<rule action="1" id="366" method="*" rtype="xss">etc/apache22/conf/httpd.conf</rule>
+			<rule action="1" id="367" method="*" rtype="xss">etc/apache22/httpd.conf</rule>
+			<rule action="1" id="368" method="*" rtype="xss">opt/apache22/conf/httpd.conf</rule>
+			<rule action="1" id="369" method="*" rtype="xss">usr/local/etc/apache2/vhosts.conf</rule>
+			<rule action="1" id="370" method="*" rtype="xss">usr/local/apache/conf/vhosts.conf</rule>
+			<rule action="1" id="371" method="*" rtype="xss">usr/local/apache2/conf/vhosts.conf</rule>
+			<rule action="1" id="372" method="*" rtype="xss">usr/local/apache/conf/vhosts-custom.conf</rule>
+			<rule action="1" id="373" method="*" rtype="xss">usr/local/apache2/conf/vhosts-custom.conf</rule>
+			<rule action="1" id="374" method="*" rtype="xss">etc/apache/default-server.conf</rule>
+			<rule action="1" id="375" method="*" rtype="xss">etc/apache2/default-server.conf</rule>
+			<rule action="1" id="376" method="*" rtype="xss">usr/local/apache2/conf/extra/httpd-ssl.conf</rule>
+			<rule action="1" id="377" method="*" rtype="xss">usr/local/apache2/conf/ssl.conf</rule>
+			<rule action="1" id="378" method="*" rtype="xss">etc/httpd/conf.d</rule>
+			<rule action="1" id="379" method="*" rtype="xss">usr/local/etc/apache22/httpd.conf</rule>
+			<rule action="1" id="380" method="*" rtype="xss">usr/local/etc/apache2/httpd.conf</rule>
+			<rule action="1" id="381" method="*" rtype="xss">etc/apache2/httpd2.conf</rule>
+			<rule action="1" id="382" method="*" rtype="xss">etc/apache2/ssl-global.conf</rule>
+			<rule action="1" id="383" method="*" rtype="xss">etc/apache2/vhosts.d/00_default_vhost.conf</rule>
+			<rule action="1" id="384" method="*" rtype="xss">apache/conf/httpd.conf</rule>
+			<rule action="1" id="385" method="*" rtype="xss">etc/apache/httpd.conf</rule>
+			<rule action="1" id="386" method="*" rtype="xss">etc/httpd/conf</rule>
+			<rule action="1" id="387" method="*" rtype="xss">http/httpd.conf</rule>
+			<rule action="1" id="388" method="*" rtype="xss">usr/local/apache1.3/conf/httpd.conf</rule>
+			<rule action="1" id="389" method="*" rtype="xss">usr/local/etc/httpd/conf</rule>
+			<rule action="1" id="390" method="*" rtype="xss">var/apache/conf/httpd.conf</rule>
+			<rule action="1" id="391" method="*" rtype="xss">var/www/conf</rule>
+			<rule action="1" id="392" method="*" rtype="xss">www/apache/conf/httpd.conf</rule>
+			<rule action="1" id="393" method="*" rtype="xss">www/conf/httpd.conf</rule>
+			<rule action="1" id="394" method="*" rtype="xss">etc/init.d</rule>
+			<rule action="1" id="395" method="*" rtype="xss">etc/apache/access.conf</rule>
+			<rule action="1" id="396" method="*" rtype="xss">etc/rc.conf</rule>
+			<rule action="1" id="397" method="*" rtype="xss">www/logs/freebsddiary-error.log</rule>
+			<rule action="1" id="398" method="*" rtype="xss">www/logs/freebsddiary-access_log</rule>
+			<rule action="1" id="399" method="*" rtype="xss">library/webserver/documents/index.html</rule>
+			<rule action="1" id="400" method="*" rtype="xss">library/webserver/documents/index.htm</rule>
+			<rule action="1" id="401" method="*" rtype="xss">library/webserver/documents/default.html</rule>
+			<rule action="1" id="402" method="*" rtype="xss">library/webserver/documents/default.htm</rule>
+			<rule action="1" id="403" method="*" rtype="xss">library/webserver/documents/index.php</rule>
+			<rule action="1" id="404" method="*" rtype="xss">library/webserver/documents/default.php</rule>
+			<rule action="1" id="405" method="*" rtype="xss">var/log/webmin/miniserv.log</rule>
+			<rule action="1" id="406" method="*" rtype="xss">usr/local/etc/webmin/miniserv.conf</rule>
+			<rule action="1" id="407" method="*" rtype="xss">etc/webmin/miniserv.conf</rule>
+			<rule action="1" id="408" method="*" rtype="xss">usr/local/etc/webmin/miniserv.users</rule>
+			<rule action="1" id="409" method="*" rtype="xss">etc/webmin/miniserv.users</rule>
+			<rule action="1" id="410" method="*" rtype="xss">winnt/system32/logfiles/w3svc/inetsvn1.log</rule>
+			<rule action="1" id="411" method="*" rtype="xss">winnt/system32/logfiles/w3svc1/inetsvn1.log</rule>
+			<rule action="1" id="412" method="*" rtype="xss">winnt/system32/logfiles/w3svc2/inetsvn1.log</rule>
+			<rule action="1" id="413" method="*" rtype="xss">winnt/system32/logfiles/w3svc3/inetsvn1.log</rule>
+			<rule action="1" id="414" method="*" rtype="xss">windows/system32/logfiles/w3svc/inetsvn1.log</rule>
+			<rule action="1" id="415" method="*" rtype="xss">windows/system32/logfiles/w3svc1/inetsvn1.log</rule>
+			<rule action="1" id="416" method="*" rtype="xss">windows/system32/logfiles/w3svc2/inetsvn1.log</rule>
+			<rule action="1" id="417" method="*" rtype="xss">windows/system32/logfiles/w3svc3/inetsvn1.log</rule>
+			<rule action="1" id="418" method="*" rtype="xss">var/log/httpd/access_log</rule>
+			<rule action="1" id="419" method="*" rtype="xss">var/log/httpd/error_log</rule>
+			<rule action="1" id="420" method="*" rtype="xss">apache/logs/error.log</rule>
+			<rule action="1" id="421" method="*" rtype="xss">apache/logs/access.log</rule>
+			<rule action="1" id="422" method="*" rtype="xss">apache2/logs/error.log</rule>
+			<rule action="1" id="423" method="*" rtype="xss">apache2/logs/access.log</rule>
+			<rule action="1" id="424" method="*" rtype="xss">logs/error.log</rule>
+			<rule action="1" id="425" method="*" rtype="xss">logs/access.log</rule>
+			<rule action="1" id="426" method="*" rtype="xss">etc/httpd/logs/access_log</rule>
+			<rule action="1" id="427" method="*" rtype="xss">etc/httpd/logs/access.log</rule>
+			<rule action="1" id="428" method="*" rtype="xss">etc/httpd/logs/error_log</rule>
+			<rule action="1" id="429" method="*" rtype="xss">etc/httpd/logs/error.log</rule>
+			<rule action="1" id="430" method="*" rtype="xss">usr/local/apache/logs/access_log</rule>
+			<rule action="1" id="431" method="*" rtype="xss">usr/local/apache/logs/access.log</rule>
+			<rule action="1" id="432" method="*" rtype="xss">usr/local/apache/logs/error_log</rule>
+			<rule action="1" id="433" method="*" rtype="xss">usr/local/apache/logs/error.log</rule>
+			<rule action="1" id="434" method="*" rtype="xss">usr/local/apache2/logs/access_log</rule>
+			<rule action="1" id="435" method="*" rtype="xss">usr/local/apache2/logs/access.log</rule>
+			<rule action="1" id="436" method="*" rtype="xss">usr/local/apache2/logs/error_log</rule>
+			<rule action="1" id="437" method="*" rtype="xss">usr/local/apache2/logs/error.log</rule>
+			<rule action="1" id="438" method="*" rtype="xss">var/www/logs/access_log</rule>
+			<rule action="1" id="439" method="*" rtype="xss">var/www/logs/access.log</rule>
+			<rule action="1" id="440" method="*" rtype="xss">var/www/logs/error_log</rule>
+			<rule action="1" id="441" method="*" rtype="xss">var/www/logs/error.log</rule>
+			<rule action="1" id="442" method="*" rtype="xss">var/log/httpd/access.log</rule>
+			<rule action="1" id="443" method="*" rtype="xss">var/log/httpd/error.log</rule>
+			<rule action="1" id="444" method="*" rtype="xss">var/log/apache/access_log</rule>
+			<rule action="1" id="445" method="*" rtype="xss">var/log/apache/access.log</rule>
+			<rule action="1" id="446" method="*" rtype="xss">var/log/apache/error_log</rule>
+			<rule action="1" id="447" method="*" rtype="xss">var/log/apache/error.log</rule>
+			<rule action="1" id="448" method="*" rtype="xss">var/log/apache2/access_log</rule>
+			<rule action="1" id="449" method="*" rtype="xss">var/log/apache2/access.log</rule>
+			<rule action="1" id="450" method="*" rtype="xss">var/log/apache2/error_log</rule>
+			<rule action="1" id="451" method="*" rtype="xss">var/log/apache2/error.log</rule>
+			<rule action="1" id="452" method="*" rtype="xss">var/log/access_log</rule>
+			<rule action="1" id="453" method="*" rtype="xss">var/log/access.log</rule>
+			<rule action="1" id="454" method="*" rtype="xss">var/log/error_log</rule>
+			<rule action="1" id="455" method="*" rtype="xss">var/log/error.log</rule>
+			<rule action="1" id="456" method="*" rtype="xss">opt/lampp/logs/access_log</rule>
+			<rule action="1" id="457" method="*" rtype="xss">opt/lampp/logs/error_log</rule>
+			<rule action="1" id="458" method="*" rtype="xss">opt/xampp/logs/access_log</rule>
+			<rule action="1" id="459" method="*" rtype="xss">opt/xampp/logs/error_log</rule>
+			<rule action="1" id="460" method="*" rtype="xss">opt/lampp/logs/access.log</rule>
+			<rule action="1" id="461" method="*" rtype="xss">opt/lampp/logs/error.log</rule>
+			<rule action="1" id="462" method="*" rtype="xss">opt/xampp/logs/access.log</rule>
+			<rule action="1" id="463" method="*" rtype="xss">opt/xampp/logs/error.log</rule>
+			<rule action="1" id="464" method="*" rtype="xss">program files/apache group/apache/logs/access.log</rule>
+			<rule action="1" id="465" method="*" rtype="xss">program files/apache group/apache/logs/error.log</rule>
+			<rule action="1" id="466" method="*" rtype="xss">program files/apache software foundation/apache2.2/logs/error.log</rule>
+			<rule action="1" id="467" method="*" rtype="xss">program files/apache software foundation/apache2.2/logs/access.log</rule>
+			<rule action="1" id="468" method="*" rtype="xss">opt/apache/apache.conf</rule>
+			<rule action="1" id="469" method="*" rtype="xss">opt/apache/conf/apache.conf</rule>
+			<rule action="1" id="470" method="*" rtype="xss">opt/apache2/apache.conf</rule>
+			<rule action="1" id="471" method="*" rtype="xss">opt/apache2/conf/apache.conf</rule>
+			<rule action="1" id="472" method="*" rtype="xss">opt/httpd/apache.conf</rule>
+			<rule action="1" id="473" method="*" rtype="xss">opt/httpd/conf/apache.conf</rule>
+			<rule action="1" id="474" method="*" rtype="xss">etc/httpd/apache.conf</rule>
+			<rule action="1" id="475" method="*" rtype="xss">etc/apache2/apache.conf</rule>
+			<rule action="1" id="476" method="*" rtype="xss">etc/httpd/conf/apache.conf</rule>
+			<rule action="1" id="477" method="*" rtype="xss">usr/local/apache/apache.conf</rule>
+			<rule action="1" id="478" method="*" rtype="xss">usr/local/apache/conf/apache.conf</rule>
+			<rule action="1" id="479" method="*" rtype="xss">usr/local/apache2/apache.conf</rule>
+			<rule action="1" id="480" method="*" rtype="xss">usr/local/apache2/conf/apache.conf</rule>
+			<rule action="1" id="481" method="*" rtype="xss">usr/local/php/apache.conf.php</rule>
+			<rule action="1" id="482" method="*" rtype="xss">usr/local/php4/apache.conf.php</rule>
+			<rule action="1" id="483" method="*" rtype="xss">usr/local/php5/apache.conf.php</rule>
+			<rule action="1" id="484" method="*" rtype="xss">usr/local/php/apache.conf</rule>
+			<rule action="1" id="485" method="*" rtype="xss">usr/local/php4/apache.conf</rule>
+			<rule action="1" id="486" method="*" rtype="xss">usr/local/php5/apache.conf</rule>
+			<rule action="1" id="487" method="*" rtype="xss">private/etc/httpd/apache.conf</rule>
+			<rule action="1" id="488" method="*" rtype="xss">opt/apache/apache2.conf</rule>
+			<rule action="1" id="489" method="*" rtype="xss">opt/apache/conf/apache2.conf</rule>
+			<rule action="1" id="490" method="*" rtype="xss">opt/apache2/apache2.conf</rule>
+			<rule action="1" id="491" method="*" rtype="xss">opt/apache2/conf/apache2.conf</rule>
+			<rule action="1" id="492" method="*" rtype="xss">opt/httpd/apache2.conf</rule>
+			<rule action="1" id="493" method="*" rtype="xss">opt/httpd/conf/apache2.conf</rule>
+			<rule action="1" id="494" method="*" rtype="xss">etc/httpd/apache2.conf</rule>
+			<rule action="1" id="495" method="*" rtype="xss">etc/httpd/conf/apache2.conf</rule>
+			<rule action="1" id="496" method="*" rtype="xss">usr/local/apache/apache2.conf</rule>
+			<rule action="1" id="497" method="*" rtype="xss">usr/local/apache/conf/apache2.conf</rule>
+			<rule action="1" id="498" method="*" rtype="xss">usr/local/apache2/apache2.conf</rule>
+			<rule action="1" id="499" method="*" rtype="xss">usr/local/apache2/conf/apache2.conf</rule>
+			<rule action="1" id="500" method="*" rtype="xss">usr/local/php/apache2.conf.php</rule>
+			<rule action="1" id="501" method="*" rtype="xss">usr/local/php4/apache2.conf.php</rule>
+			<rule action="1" id="502" method="*" rtype="xss">usr/local/php5/apache2.conf.php</rule>
+			<rule action="1" id="503" method="*" rtype="xss">usr/local/php/apache2.conf</rule>
+			<rule action="1" id="504" method="*" rtype="xss">usr/local/php4/apache2.conf</rule>
+			<rule action="1" id="505" method="*" rtype="xss">usr/local/php5/apache2.conf</rule>
+			<rule action="1" id="506" method="*" rtype="xss">private/etc/httpd/apache2.conf</rule>
+			<rule action="1" id="507" method="*" rtype="xss">usr/local/apache/conf/httpd.conf</rule>
+			<rule action="1" id="508" method="*" rtype="xss">usr/local/apache2/conf/httpd.conf</rule>
+			<rule action="1" id="509" method="*" rtype="xss">etc/httpd/conf/httpd.conf</rule>
+			<rule action="1" id="510" method="*" rtype="xss">etc/apache/apache.conf</rule>
+			<rule action="1" id="511" method="*" rtype="xss">etc/apache/conf/httpd.conf</rule>
+			<rule action="1" id="512" method="*" rtype="xss">etc/apache2/httpd.conf</rule>
+			<rule action="1" id="513" method="*" rtype="xss">usr/apache2/conf/httpd.conf</rule>
+			<rule action="1" id="514" method="*" rtype="xss">usr/apache/conf/httpd.conf</rule>
+			<rule action="1" id="515" method="*" rtype="xss">usr/local/etc/apache/conf/httpd.conf</rule>
+			<rule action="1" id="516" method="*" rtype="xss">usr/local/apache/httpd.conf</rule>
+			<rule action="1" id="517" method="*" rtype="xss">usr/local/apache2/httpd.conf</rule>
+			<rule action="1" id="518" method="*" rtype="xss">usr/local/httpd/conf/httpd.conf</rule>
+			<rule action="1" id="519" method="*" rtype="xss">usr/local/etc/apache2/conf/httpd.conf</rule>
+			<rule action="1" id="520" method="*" rtype="xss">usr/local/etc/httpd/conf/httpd.conf</rule>
+			<rule action="1" id="521" method="*" rtype="xss">usr/local/apps/apache2/conf/httpd.conf</rule>
+			<rule action="1" id="522" method="*" rtype="xss">usr/local/apps/apache/conf/httpd.conf</rule>
+			<rule action="1" id="523" method="*" rtype="xss">usr/local/php/httpd.conf.php</rule>
+			<rule action="1" id="524" method="*" rtype="xss">usr/local/php4/httpd.conf.php</rule>
+			<rule action="1" id="525" method="*" rtype="xss">usr/local/php5/httpd.conf.php</rule>
+			<rule action="1" id="526" method="*" rtype="xss">usr/local/php/httpd.conf</rule>
+			<rule action="1" id="527" method="*" rtype="xss">usr/local/php4/httpd.conf</rule>
+			<rule action="1" id="528" method="*" rtype="xss">usr/local/php5/httpd.conf</rule>
+			<rule action="1" id="529" method="*" rtype="xss">etc/apache2/conf/httpd.conf</rule>
+			<rule action="1" id="530" method="*" rtype="xss">etc/http/conf/httpd.conf</rule>
+			<rule action="1" id="531" method="*" rtype="xss">etc/httpd/httpd.conf</rule>
+			<rule action="1" id="532" method="*" rtype="xss">etc/http/httpd.conf</rule>
+			<rule action="1" id="533" method="*" rtype="xss">etc/httpd.conf</rule>
+			<rule action="1" id="534" method="*" rtype="xss">opt/apache/conf/httpd.conf</rule>
+			<rule action="1" id="535" method="*" rtype="xss">opt/apache2/conf/httpd.conf</rule>
+			<rule action="1" id="536" method="*" rtype="xss">var/www/conf/httpd.conf</rule>
+			<rule action="1" id="537" method="*" rtype="xss">private/etc/httpd/httpd.conf</rule>
+			<rule action="1" id="538" method="*" rtype="xss">private/etc/httpd/httpd.conf.default</rule>
+			<rule action="1" id="539" method="*" rtype="xss">etc/apache2/vhosts.d/default_vhost.include</rule>
+			<rule action="1" id="540" method="*" rtype="xss">etc/apache2/conf.d/charset</rule>
+			<rule action="1" id="541" method="*" rtype="xss">etc/apache2/conf.d/security</rule>
+			<rule action="1" id="542" method="*" rtype="xss">etc/apache2/envvars</rule>
+			<rule action="1" id="543" method="*" rtype="xss">etc/apache2/mods-available/autoindex.conf</rule>
+			<rule action="1" id="544" method="*" rtype="xss">etc/apache2/mods-available/deflate.conf</rule>
+			<rule action="1" id="545" method="*" rtype="xss">etc/apache2/mods-available/dir.conf</rule>
+			<rule action="1" id="546" method="*" rtype="xss">etc/apache2/mods-available/mem_cache.conf</rule>
+			<rule action="1" id="547" method="*" rtype="xss">etc/apache2/mods-available/mime.conf</rule>
+			<rule action="1" id="548" method="*" rtype="xss">etc/apache2/mods-available/proxy.conf</rule>
+			<rule action="1" id="549" method="*" rtype="xss">etc/apache2/mods-available/setenvif.conf</rule>
+			<rule action="1" id="550" method="*" rtype="xss">etc/apache2/mods-available/ssl.conf</rule>
+			<rule action="1" id="551" method="*" rtype="xss">etc/apache2/mods-enabled/alias.conf</rule>
+			<rule action="1" id="552" method="*" rtype="xss">etc/apache2/mods-enabled/deflate.conf</rule>
+			<rule action="1" id="553" method="*" rtype="xss">etc/apache2/mods-enabled/dir.conf</rule>
+			<rule action="1" id="554" method="*" rtype="xss">etc/apache2/mods-enabled/mime.conf</rule>
+			<rule action="1" id="555" method="*" rtype="xss">etc/apache2/mods-enabled/negotiation.conf</rule>
+			<rule action="1" id="556" method="*" rtype="xss">etc/apache2/mods-enabled/php5.conf</rule>
+			<rule action="1" id="557" method="*" rtype="xss">etc/apache2/mods-enabled/status.conf</rule>
+			<rule action="1" id="558" method="*" rtype="xss">program files/apache group/apache/conf/httpd.conf</rule>
+			<rule action="1" id="559" method="*" rtype="xss">program files/apache group/apache2/conf/httpd.conf</rule>
+			<rule action="1" id="560" method="*" rtype="xss">program files/xampp/apache/conf/apache.conf</rule>
+			<rule action="1" id="561" method="*" rtype="xss">program files/xampp/apache/conf/apache2.conf</rule>
+			<rule action="1" id="562" method="*" rtype="xss">program files/xampp/apache/conf/httpd.conf</rule>
+			<rule action="1" id="563" method="*" rtype="xss">program files/apache group/apache/apache.conf</rule>
+			<rule action="1" id="564" method="*" rtype="xss">program files/apache group/apache/conf/apache.conf</rule>
+			<rule action="1" id="565" method="*" rtype="xss">program files/apache group/apache2/conf/apache.conf</rule>
+			<rule action="1" id="566" method="*" rtype="xss">program files/apache group/apache/apache2.conf</rule>
+			<rule action="1" id="567" method="*" rtype="xss">program files/apache group/apache/conf/apache2.conf</rule>
+			<rule action="1" id="568" method="*" rtype="xss">program files/apache group/apache2/conf/apache2.conf</rule>
+			<rule action="1" id="569" method="*" rtype="xss">program files/apache software foundation/apache2.2/conf/httpd.conf</rule>
+			<rule action="1" id="570" method="*" rtype="xss">volumes/macintosh_hd1/opt/httpd/conf/httpd.conf</rule>
+			<rule action="1" id="571" method="*" rtype="xss">volumes/macintosh_hd1/opt/apache/conf/httpd.conf</rule>
+			<rule action="1" id="572" method="*" rtype="xss">volumes/macintosh_hd1/opt/apache2/conf/httpd.conf</rule>
+			<rule action="1" id="573" method="*" rtype="xss">volumes/macintosh_hd1/usr/local/php/httpd.conf.php</rule>
+			<rule action="1" id="574" method="*" rtype="xss">volumes/macintosh_hd1/usr/local/php4/httpd.conf.php</rule>
+			<rule action="1" id="575" method="*" rtype="xss">volumes/macintosh_hd1/usr/local/php5/httpd.conf.php</rule>
+			<rule action="1" id="576" method="*" rtype="xss">volumes/webbackup/opt/apache2/conf/httpd.conf</rule>
+			<rule action="1" id="577" method="*" rtype="xss">volumes/webbackup/private/etc/httpd/httpd.conf</rule>
+			<rule action="1" id="578" method="*" rtype="xss">volumes/webbackup/private/etc/httpd/httpd.conf.default</rule>
+			<rule action="1" id="579" method="*" rtype="xss">usr/local/etc/apache/vhosts.conf</rule>
+			<rule action="1" id="580" method="*" rtype="xss">usr/local/jakarta/tomcat/conf/jakarta.conf</rule>
+			<rule action="1" id="581" method="*" rtype="xss">usr/local/jakarta/tomcat/conf/server.xml</rule>
+			<rule action="1" id="582" method="*" rtype="xss">usr/local/jakarta/tomcat/conf/context.xml</rule>
+			<rule action="1" id="583" method="*" rtype="xss">usr/local/jakarta/tomcat/conf/workers.properties</rule>
+			<rule action="1" id="584" method="*" rtype="xss">usr/local/jakarta/tomcat/conf/logging.properties</rule>
+			<rule action="1" id="585" method="*" rtype="xss">usr/local/jakarta/dist/tomcat/conf/jakarta.conf</rule>
+			<rule action="1" id="586" method="*" rtype="xss">usr/local/jakarta/dist/tomcat/conf/server.xml</rule>
+			<rule action="1" id="587" method="*" rtype="xss">usr/local/jakarta/dist/tomcat/conf/context.xml</rule>
+			<rule action="1" id="588" method="*" rtype="xss">usr/local/jakarta/dist/tomcat/conf/workers.properties</rule>
+			<rule action="1" id="589" method="*" rtype="xss">usr/local/jakarta/dist/tomcat/conf/logging.properties</rule>
+			<rule action="1" id="590" method="*" rtype="xss">usr/share/tomcat6/conf/server.xml</rule>
+			<rule action="1" id="591" method="*" rtype="xss">usr/share/tomcat6/conf/context.xml</rule>
+			<rule action="1" id="592" method="*" rtype="xss">usr/share/tomcat6/conf/workers.properties</rule>
+			<rule action="1" id="593" method="*" rtype="xss">usr/share/tomcat6/conf/logging.properties</rule>
+			<rule action="1" id="594" method="*" rtype="xss">var/log/tomcat6/catalina.out</rule>
+			<rule action="1" id="595" method="*" rtype="xss">var/cpanel/tomcat.options</rule>
+			<rule action="1" id="596" method="*" rtype="xss">usr/local/jakarta/tomcat/logs/catalina.out</rule>
+			<rule action="1" id="597" method="*" rtype="xss">usr/local/jakarta/tomcat/logs/catalina.err</rule>
+			<rule action="1" id="598" method="*" rtype="xss">opt/tomcat/logs/catalina.out</rule>
+			<rule action="1" id="599" method="*" rtype="xss">opt/tomcat/logs/catalina.err</rule>
+			<rule action="1" id="600" method="*" rtype="xss">usr/share/logs/catalina.out</rule>
+			<rule action="1" id="601" method="*" rtype="xss">usr/share/logs/catalina.err</rule>
+			<rule action="1" id="602" method="*" rtype="xss">usr/share/tomcat/logs/catalina.out</rule>
+			<rule action="1" id="603" method="*" rtype="xss">usr/share/tomcat/logs/catalina.err</rule>
+			<rule action="1" id="604" method="*" rtype="xss">usr/share/tomcat6/logs/catalina.out</rule>
+			<rule action="1" id="605" method="*" rtype="xss">usr/share/tomcat6/logs/catalina.err</rule>
+			<rule action="1" id="606" method="*" rtype="xss">usr/local/apache/logs/mod_jk.log</rule>
+			<rule action="1" id="607" method="*" rtype="xss">usr/local/jakarta/tomcat/logs/mod_jk.log</rule>
+			<rule action="1" id="608" method="*" rtype="xss">usr/local/jakarta/dist/tomcat/logs/mod_jk.log</rule>
+			<rule action="1" id="609" method="*" rtype="xss">opt/[jboss]/server/default/conf/jboss-minimal.xml</rule>
+			<rule action="1" id="610" method="*" rtype="xss">opt/[jboss]/server/default/conf/jboss-service.xml</rule>
+			<rule action="1" id="611" method="*" rtype="xss">opt/[jboss]/server/default/conf/jndi.properties</rule>
+			<rule action="1" id="612" method="*" rtype="xss">opt/[jboss]/server/default/conf/log4j.xml</rule>
+			<rule action="1" id="613" method="*" rtype="xss">opt/[jboss]/server/default/conf/login-config.xml</rule>
+			<rule action="1" id="614" method="*" rtype="xss">opt/[jboss]/server/default/conf/standardjaws.xml</rule>
+			<rule action="1" id="615" method="*" rtype="xss">opt/[jboss]/server/default/conf/standardjboss.xml</rule>
+			<rule action="1" id="616" method="*" rtype="xss">opt/[jboss]/server/default/conf/server.log.properties</rule>
+			<rule action="1" id="617" method="*" rtype="xss">opt/[jboss]/server/default/deploy/jboss-logging.xml</rule>
+			<rule action="1" id="618" method="*" rtype="xss">usr/local/[jboss]/server/default/conf/jboss-minimal.xml</rule>
+			<rule action="1" id="619" method="*" rtype="xss">usr/local/[jboss]/server/default/conf/jboss-service.xml</rule>
+			<rule action="1" id="620" method="*" rtype="xss">usr/local/[jboss]/server/default/conf/jndi.properties</rule>
+			<rule action="1" id="621" method="*" rtype="xss">usr/local/[jboss]/server/default/conf/log4j.xml</rule>
+			<rule action="1" id="622" method="*" rtype="xss">usr/local/[jboss]/server/default/conf/login-config.xml</rule>
+			<rule action="1" id="623" method="*" rtype="xss">usr/local/[jboss]/server/default/conf/standardjaws.xml</rule>
+			<rule action="1" id="624" method="*" rtype="xss">usr/local/[jboss]/server/default/conf/standardjboss.xml</rule>
+			<rule action="1" id="625" method="*" rtype="xss">usr/local/[jboss]/server/default/conf/server.log.properties</rule>
+			<rule action="1" id="626" method="*" rtype="xss">usr/local/[jboss]/server/default/deploy/jboss-logging.xml</rule>
+			<rule action="1" id="627" method="*" rtype="xss">private/tmp/[jboss]/server/default/conf/jboss-minimal.xml</rule>
+			<rule action="1" id="628" method="*" rtype="xss">private/tmp/[jboss]/server/default/conf/jboss-service.xml</rule>
+			<rule action="1" id="629" method="*" rtype="xss">private/tmp/[jboss]/server/default/conf/jndi.properties</rule>
+			<rule action="1" id="630" method="*" rtype="xss">private/tmp/[jboss]/server/default/conf/log4j.xml</rule>
+			<rule action="1" id="631" method="*" rtype="xss">private/tmp/[jboss]/server/default/conf/login-config.xml</rule>
+			<rule action="1" id="632" method="*" rtype="xss">private/tmp/[jboss]/server/default/conf/standardjaws.xml</rule>
+			<rule action="1" id="633" method="*" rtype="xss">private/tmp/[jboss]/server/default/conf/standardjboss.xml</rule>
+			<rule action="1" id="634" method="*" rtype="xss">private/tmp/[jboss]/server/default/conf/server.log.properties</rule>
+			<rule action="1" id="635" method="*" rtype="xss">private/tmp/[jboss]/server/default/deploy/jboss-logging.xml</rule>
+			<rule action="1" id="636" method="*" rtype="xss">tmp/[jboss]/server/default/conf/jboss-minimal.xml</rule>
+			<rule action="1" id="637" method="*" rtype="xss">tmp/[jboss]/server/default/conf/jboss-service.xml</rule>
+			<rule action="1" id="638" method="*" rtype="xss">tmp/[jboss]/server/default/conf/jndi.properties</rule>
+			<rule action="1" id="639" method="*" rtype="xss">tmp/[jboss]/server/default/conf/log4j.xml</rule>
+			<rule action="1" id="640" method="*" rtype="xss">tmp/[jboss]/server/default/conf/login-config.xml</rule>
+			<rule action="1" id="641" method="*" rtype="xss">tmp/[jboss]/server/default/conf/standardjaws.xml</rule>
+			<rule action="1" id="642" method="*" rtype="xss">tmp/[jboss]/server/default/conf/standardjboss.xml</rule>
+			<rule action="1" id="643" method="*" rtype="xss">tmp/[jboss]/server/default/conf/server.log.properties</rule>
+			<rule action="1" id="644" method="*" rtype="xss">tmp/[jboss]/server/default/deploy/jboss-logging.xml</rule>
+			<rule action="1" id="645" method="*" rtype="xss">program files/[jboss]/server/default/conf/jboss-minimal.xml</rule>
+			<rule action="1" id="646" method="*" rtype="xss">program files/[jboss]/server/default/conf/jboss-service.xml</rule>
+			<rule action="1" id="647" method="*" rtype="xss">program files/[jboss]/server/default/conf/jndi.properties</rule>
+			<rule action="1" id="648" method="*" rtype="xss">program files/[jboss]/server/default/conf/log4j.xml</rule>
+			<rule action="1" id="649" method="*" rtype="xss">program files/[jboss]/server/default/conf/login-config.xml</rule>
+			<rule action="1" id="650" method="*" rtype="xss">program files/[jboss]/server/default/conf/standardjaws.xml</rule>
+			<rule action="1" id="651" method="*" rtype="xss">program files/[jboss]/server/default/conf/standardjboss.xml</rule>
+			<rule action="1" id="652" method="*" rtype="xss">program files/[jboss]/server/default/conf/server.log.properties</rule>
+			<rule action="1" id="653" method="*" rtype="xss">program files/[jboss]/server/default/deploy/jboss-logging.xml</rule>
+			<rule action="1" id="654" method="*" rtype="xss">[jboss]/server/default/conf/jboss-minimal.xml</rule>
+			<rule action="1" id="655" method="*" rtype="xss">[jboss]/server/default/conf/jboss-service.xml</rule>
+			<rule action="1" id="656" method="*" rtype="xss">[jboss]/server/default/conf/jndi.properties</rule>
+			<rule action="1" id="657" method="*" rtype="xss">[jboss]/server/default/conf/log4j.xml</rule>
+			<rule action="1" id="658" method="*" rtype="xss">[jboss]/server/default/conf/login-config.xml</rule>
+			<rule action="1" id="659" method="*" rtype="xss">[jboss]/server/default/conf/standardjaws.xml</rule>
+			<rule action="1" id="660" method="*" rtype="xss">[jboss]/server/default/conf/standardjboss.xml</rule>
+			<rule action="1" id="661" method="*" rtype="xss">[jboss]/server/default/conf/server.log.properties</rule>
+			<rule action="1" id="662" method="*" rtype="xss">[jboss]/server/default/deploy/jboss-logging.xml</rule>
+			<rule action="1" id="663" method="*" rtype="xss">opt/[jboss]/server/default/log/server.log</rule>
+			<rule action="1" id="664" method="*" rtype="xss">opt/[jboss]/server/default/log/boot.log</rule>
+			<rule action="1" id="665" method="*" rtype="xss">usr/local/[jboss]/server/default/log/server.log</rule>
+			<rule action="1" id="666" method="*" rtype="xss">usr/local/[jboss]/server/default/log/boot.log</rule>
+			<rule action="1" id="667" method="*" rtype="xss">private/tmp/[jboss]/server/default/log/server.log</rule>
+			<rule action="1" id="668" method="*" rtype="xss">private/tmp/[jboss]/server/default/log/boot.log</rule>
+			<rule action="1" id="669" method="*" rtype="xss">tmp/[jboss]/server/default/log/server.log</rule>
+			<rule action="1" id="670" method="*" rtype="xss">tmp/[jboss]/server/default/log/boot.log</rule>
+			<rule action="1" id="671" method="*" rtype="xss">program files/[jboss]/server/default/log/server.log</rule>
+			<rule action="1" id="672" method="*" rtype="xss">program files/[jboss]/server/default/log/boot.log</rule>
+			<rule action="1" id="673" method="*" rtype="xss">[jboss]/server/default/log/server.log</rule>
+			<rule action="1" id="674" method="*" rtype="xss">[jboss]/server/default/log/boot.log</rule>
+			<rule action="1" id="675" method="*" rtype="xss">var/log/lighttpd.error.log</rule>
+			<rule action="1" id="676" method="*" rtype="xss">var/log/lighttpd.access.log</rule>
+			<rule action="1" id="677" method="*" rtype="xss">var/lighttpd.log</rule>
+			<rule action="1" id="678" method="*" rtype="xss">var/logs/access.log</rule>
+			<rule action="1" id="679" method="*" rtype="xss">var/log/lighttpd/</rule>
+			<rule action="1" id="680" method="*" rtype="xss">var/log/lighttpd/error.log</rule>
+			<rule action="1" id="681" method="*" rtype="xss">var/log/lighttpd/access.www.log</rule>
+			<rule action="1" id="682" method="*" rtype="xss">var/log/lighttpd/error.www.log</rule>
+			<rule action="1" id="683" method="*" rtype="xss">var/log/lighttpd/access.log</rule>
+			<rule action="1" id="684" method="*" rtype="xss">usr/local/apache2/logs/lighttpd.error.log</rule>
+			<rule action="1" id="685" method="*" rtype="xss">usr/local/apache2/logs/lighttpd.log</rule>
+			<rule action="1" id="686" method="*" rtype="xss">usr/local/apache/logs/lighttpd.error.log</rule>
+			<rule action="1" id="687" method="*" rtype="xss">usr/local/apache/logs/lighttpd.log</rule>
+			<rule action="1" id="688" method="*" rtype="xss">usr/local/lighttpd/log/lighttpd.error.log</rule>
+			<rule action="1" id="689" method="*" rtype="xss">usr/local/lighttpd/log/access.log</rule>
+			<rule action="1" id="690" method="*" rtype="xss">var/log/lighttpd/{domain}/access.log</rule>
+			<rule action="1" id="691" method="*" rtype="xss">var/log/lighttpd/{domain}/error.log</rule>
+			<rule action="1" id="692" method="*" rtype="xss">usr/home/user/var/log/lighttpd.error.log</rule>
+			<rule action="1" id="693" method="*" rtype="xss">usr/home/user/var/log/apache.log</rule>
+			<rule action="1" id="694" method="*" rtype="xss">home/user/lighttpd/lighttpd.conf</rule>
+			<rule action="1" id="695" method="*" rtype="xss">usr/home/user/lighttpd/lighttpd.conf</rule>
+			<rule action="1" id="696" method="*" rtype="xss">etc/lighttpd/lighthttpd.conf</rule>
+			<rule action="1" id="697" method="*" rtype="xss">usr/local/etc/lighttpd.conf</rule>
+			<rule action="1" id="698" method="*" rtype="xss">usr/local/lighttpd/conf/lighttpd.conf</rule>
+			<rule action="1" id="699" method="*" rtype="xss">usr/local/etc/lighttpd.conf.new</rule>
+			<rule action="1" id="700" method="*" rtype="xss">var/www/.lighttpdpassword</rule>
+			<rule action="1" id="701" method="*" rtype="xss">var/log/nginx/access_log</rule>
+			<rule action="1" id="702" method="*" rtype="xss">var/log/nginx/error_log</rule>
+			<rule action="1" id="703" method="*" rtype="xss">var/log/nginx/access.log</rule>
+			<rule action="1" id="704" method="*" rtype="xss">var/log/nginx/error.log</rule>
+			<rule action="1" id="705" method="*" rtype="xss">var/log/nginx.access_log</rule>
+			<rule action="1" id="706" method="*" rtype="xss">var/log/nginx.error_log</rule>
+			<rule action="1" id="707" method="*" rtype="xss">logs/access_log</rule>
+			<rule action="1" id="708" method="*" rtype="xss">logs/error_log</rule>
+			<rule action="1" id="709" method="*" rtype="xss">etc/nginx/nginx.conf</rule>
+			<rule action="1" id="710" method="*" rtype="xss">usr/local/etc/nginx/nginx.conf</rule>
+			<rule action="1" id="711" method="*" rtype="xss">usr/local/nginx/conf/nginx.conf</rule>
+			<rule action="1" id="712" method="*" rtype="xss">usr/local/zeus/web/global.cfg</rule>
+			<rule action="1" id="713" method="*" rtype="xss">usr/local/zeus/web/log/errors</rule>
+			<rule action="1" id="714" method="*" rtype="xss">opt/lsws/conf/httpd_conf.xml</rule>
+			<rule action="1" id="715" method="*" rtype="xss">usr/local/lsws/conf/httpd_conf.xml</rule>
+			<rule action="1" id="716" method="*" rtype="xss">opt/lsws/logs/error.log</rule>
+			<rule action="1" id="717" method="*" rtype="xss">opt/lsws/logs/access.log</rule>
+			<rule action="1" id="718" method="*" rtype="xss">usr/local/lsws/logs/error.log</rule>
+			<rule action="1" id="719" method="*" rtype="xss">usr/local/logs/access.log</rule>
+			<rule action="1" id="720" method="*" rtype="xss">usr/local/samba/lib/log.user</rule>
+			<rule action="1" id="721" method="*" rtype="xss">usr/local/logs/samba.log</rule>
+			<rule action="1" id="722" method="*" rtype="xss">var/log/samba/log.smbd</rule>
+			<rule action="1" id="723" method="*" rtype="xss">var/log/samba/log.nmbd</rule>
+			<rule action="1" id="724" method="*" rtype="xss">var/log/samba.log</rule>
+			<rule action="1" id="725" method="*" rtype="xss">var/log/samba.log1</rule>
+			<rule action="1" id="726" method="*" rtype="xss">var/log/samba.log2</rule>
+			<rule action="1" id="727" method="*" rtype="xss">var/log/log.smb</rule>
+			<rule action="1" id="728" method="*" rtype="xss">etc/samba/netlogon</rule>
+			<rule action="1" id="729" method="*" rtype="xss">etc/smbpasswd</rule>
+			<rule action="1" id="730" method="*" rtype="xss">etc/smb.conf</rule>
+			<rule action="1" id="731" method="*" rtype="xss">etc/samba/dhcp.conf</rule>
+			<rule action="1" id="732" method="*" rtype="xss">etc/samba/smb.conf</rule>
+			<rule action="1" id="733" method="*" rtype="xss">etc/samba/samba.conf</rule>
+			<rule action="1" id="734" method="*" rtype="xss">etc/samba/smb.conf.user</rule>
+			<rule action="1" id="735" method="*" rtype="xss">etc/samba/smbpasswd</rule>
+			<rule action="1" id="736" method="*" rtype="xss">etc/samba/smbusers</rule>
+			<rule action="1" id="737" method="*" rtype="xss">etc/samba/private/smbpasswd</rule>
+			<rule action="1" id="738" method="*" rtype="xss">usr/local/etc/smb.conf</rule>
+			<rule action="1" id="739" method="*" rtype="xss">usr/local/samba/lib/smb.conf.user</rule>
+			<rule action="1" id="740" method="*" rtype="xss">etc/dhcp3/dhclient.conf</rule>
+			<rule action="1" id="741" method="*" rtype="xss">etc/dhcp3/dhcpd.conf</rule>
+			<rule action="1" id="742" method="*" rtype="xss">etc/dhcp/dhclient.conf</rule>
+			<rule action="1" id="743" method="*" rtype="xss">program files/vidalia bundle/polipo/polipo.conf</rule>
+			<rule action="1" id="744" method="*" rtype="xss">etc/tor/tor-tsocks.conf</rule>
+			<rule action="1" id="745" method="*" rtype="xss">etc/stunnel/stunnel.conf</rule>
+			<rule action="1" id="746" method="*" rtype="xss">etc/tsocks.conf</rule>
+			<rule action="1" id="747" method="*" rtype="xss">etc/tinyproxy/tinyproxy.conf</rule>
+			<rule action="1" id="748" method="*" rtype="xss">etc/miredo-server.conf</rule>
+			<rule action="1" id="749" method="*" rtype="xss">etc/miredo.conf</rule>
+			<rule action="1" id="750" method="*" rtype="xss">etc/miredo/miredo-server.conf</rule>
+			<rule action="1" id="751" method="*" rtype="xss">etc/miredo/miredo.conf</rule>
+			<rule action="1" id="752" method="*" rtype="xss">etc/wicd/dhclient.conf.template.default</rule>
+			<rule action="1" id="753" method="*" rtype="xss">etc/wicd/manager-settings.conf</rule>
+			<rule action="1" id="754" method="*" rtype="xss">etc/wicd/wired-settings.conf</rule>
+			<rule action="1" id="755" method="*" rtype="xss">etc/wicd/wireless-settings.conf</rule>
+			<rule action="1" id="756" method="*" rtype="xss">var/log/ipfw.log</rule>
+			<rule action="1" id="757" method="*" rtype="xss">var/log/ipfw</rule>
+			<rule action="1" id="758" method="*" rtype="xss">var/log/ipfw/ipfw.log</rule>
+			<rule action="1" id="759" method="*" rtype="xss">var/log/ipfw.today</rule>
+			<rule action="1" id="760" method="*" rtype="xss">etc/ipfw.rules</rule>
+			<rule action="1" id="761" method="*" rtype="xss">etc/ipfw.conf</rule>
+			<rule action="1" id="762" method="*" rtype="xss">etc/firewall.rules</rule>
+			<rule action="1" id="763" method="*" rtype="xss">winnt/system32/logfiles/firewall/pfirewall.log</rule>
+			<rule action="1" id="764" method="*" rtype="xss">winnt/system32/logfiles/firewall/pfirewall.log.old</rule>
+			<rule action="1" id="765" method="*" rtype="xss">windows/system32/logfiles/firewall/pfirewall.log</rule>
+			<rule action="1" id="766" method="*" rtype="xss">windows/system32/logfiles/firewall/pfirewall.log.old</rule>
+			<rule action="1" id="767" method="*" rtype="xss">etc/clamav/clamd.conf</rule>
+			<rule action="1" id="768" method="*" rtype="xss">etc/clamav/freshclam.conf</rule>
+			<rule action="1" id="769" method="*" rtype="xss">etc/x11/xorg.conf</rule>
+			<rule action="1" id="770" method="*" rtype="xss">etc/x11/xorg.conf-vesa</rule>
+			<rule action="1" id="771" method="*" rtype="xss">etc/x11/xorg.conf-vmware</rule>
+			<rule action="1" id="772" method="*" rtype="xss">etc/x11/xorg.conf.beforevmwaretoolsinstall</rule>
+			<rule action="1" id="773" method="*" rtype="xss">etc/x11/xorg.conf.orig</rule>
+			<rule action="1" id="774" method="*" rtype="xss">etc/bluetooth/input.conf</rule>
+			<rule action="1" id="775" method="*" rtype="xss">etc/bluetooth/main.conf</rule>
+			<rule action="1" id="776" method="*" rtype="xss">etc/bluetooth/network.conf</rule>
+			<rule action="1" id="777" method="*" rtype="xss">etc/bluetooth/rfcomm.conf</rule>
+			<rule action="1" id="778" method="*" rtype="xss">proc/self/environ</rule>
+			<rule action="1" id="779" method="*" rtype="xss">proc/self/mounts</rule>
+			<rule action="1" id="780" method="*" rtype="xss">proc/self/stat</rule>
+			<rule action="1" id="781" method="*" rtype="xss">proc/self/status</rule>
+			<rule action="1" id="782" method="*" rtype="xss">proc/self/cmdline</rule>
+			<rule action="1" id="783" method="*" rtype="xss">proc/self/fd/0</rule>
+			<rule action="1" id="784" method="*" rtype="xss">proc/self/fd/1</rule>
+			<rule action="1" id="785" method="*" rtype="xss">proc/self/fd/2</rule>
+			<rule action="1" id="786" method="*" rtype="xss">proc/self/fd/3</rule>
+			<rule action="1" id="787" method="*" rtype="xss">proc/self/fd/4</rule>
+			<rule action="1" id="788" method="*" rtype="xss">proc/self/fd/5</rule>
+			<rule action="1" id="789" method="*" rtype="xss">proc/self/fd/6</rule>
+			<rule action="1" id="790" method="*" rtype="xss">proc/self/fd/7</rule>
+			<rule action="1" id="791" method="*" rtype="xss">proc/self/fd/8</rule>
+			<rule action="1" id="792" method="*" rtype="xss">proc/self/fd/9</rule>
+			<rule action="1" id="793" method="*" rtype="xss">proc/self/fd/10</rule>
+			<rule action="1" id="794" method="*" rtype="xss">proc/self/fd/11</rule>
+			<rule action="1" id="795" method="*" rtype="xss">proc/self/fd/12</rule>
+			<rule action="1" id="796" method="*" rtype="xss">proc/self/fd/13</rule>
+			<rule action="1" id="797" method="*" rtype="xss">proc/self/fd/14</rule>
+			<rule action="1" id="798" method="*" rtype="xss">proc/self/fd/15</rule>
+			<rule action="1" id="799" method="*" rtype="xss">proc/version</rule>
+			<rule action="1" id="800" method="*" rtype="xss">proc/devices</rule>
+			<rule action="1" id="801" method="*" rtype="xss">proc/cpuinfo</rule>
+			<rule action="1" id="802" method="*" rtype="xss">proc/meminfo</rule>
+			<rule action="1" id="803" method="*" rtype="xss">proc/net/tcp</rule>
+			<rule action="1" id="804" method="*" rtype="xss">proc/net/udp</rule>
+			<rule action="1" id="805" method="*" rtype="xss">etc/bash_completion.d/debconf</rule>
+			<rule action="1" id="806" method="*" rtype="xss">root/.bash_logout</rule>
+			<rule action="1" id="807" method="*" rtype="xss">root/.bash_history</rule>
+			<rule action="1" id="808" method="*" rtype="xss">root/.bash_config</rule>
+			<rule action="1" id="809" method="*" rtype="xss">root/.bashrc</rule>
+			<rule action="1" id="810" method="*" rtype="xss">etc/bash.bashrc</rule>
+			<rule action="1" id="811" method="*" rtype="xss">var/adm/syslog</rule>
+			<rule action="1" id="812" method="*" rtype="xss">var/adm/sulog</rule>
+			<rule action="1" id="813" method="*" rtype="xss">var/adm/utmp</rule>
+			<rule action="1" id="814" method="*" rtype="xss">var/adm/utmpx</rule>
+			<rule action="1" id="815" method="*" rtype="xss">var/adm/wtmp</rule>
+			<rule action="1" id="816" method="*" rtype="xss">var/adm/wtmpx</rule>
+			<rule action="1" id="817" method="*" rtype="xss">var/adm/lastlog/username</rule>
+			<rule action="1" id="818" method="*" rtype="xss">usr/spool/lp/log</rule>
+			<rule action="1" id="819" method="*" rtype="xss">var/adm/lp/lpd-errs</rule>
+			<rule action="1" id="820" method="*" rtype="xss">usr/lib/cron/log</rule>
+			<rule action="1" id="821" method="*" rtype="xss">var/adm/loginlog</rule>
+			<rule action="1" id="822" method="*" rtype="xss">var/adm/pacct</rule>
+			<rule action="1" id="823" method="*" rtype="xss">var/adm/dtmp</rule>
+			<rule action="1" id="824" method="*" rtype="xss">var/adm/acct/sum/loginlog</rule>
+			<rule action="1" id="825" method="*" rtype="xss">var/adm/x0msgs</rule>
+			<rule action="1" id="826" method="*" rtype="xss">var/adm/crash/vmcore</rule>
+			<rule action="1" id="827" method="*" rtype="xss">var/adm/crash/unix</rule>
+			<rule action="1" id="828" method="*" rtype="xss">etc/newsyslog.conf</rule>
+			<rule action="1" id="829" method="*" rtype="xss">var/adm/qacct</rule>
+			<rule action="1" id="830" method="*" rtype="xss">var/adm/ras/errlog</rule>
+			<rule action="1" id="831" method="*" rtype="xss">var/adm/ras/bootlog</rule>
+			<rule action="1" id="832" method="*" rtype="xss">var/adm/cron/log</rule>
+			<rule action="1" id="833" method="*" rtype="xss">etc/utmp</rule>
+			<rule action="1" id="834" method="*" rtype="xss">etc/security/lastlog</rule>
+			<rule action="1" id="835" method="*" rtype="xss">etc/security/failedlogin</rule>
+			<rule action="1" id="836" method="*" rtype="xss">usr/spool/mqueue/syslog</rule>
+			<rule action="1" id="837" method="*" rtype="xss">var/adm/messages</rule>
+			<rule action="1" id="838" method="*" rtype="xss">var/adm/aculogs</rule>
+			<rule action="1" id="839" method="*" rtype="xss">var/adm/aculog</rule>
+			<rule action="1" id="840" method="*" rtype="xss">var/adm/vold.log</rule>
+			<rule action="1" id="841" method="*" rtype="xss">var/adm/log/asppp.log</rule>
+			<rule action="1" id="842" method="*" rtype="xss">var/log/poplog</rule>
+			<rule action="1" id="843" method="*" rtype="xss">var/log/authlog</rule>
+			<rule action="1" id="844" method="*" rtype="xss">var/lp/logs/lpsched</rule>
+			<rule action="1" id="845" method="*" rtype="xss">var/lp/logs/lpnet</rule>
+			<rule action="1" id="846" method="*" rtype="xss">var/lp/logs/requests</rule>
+			<rule action="1" id="847" method="*" rtype="xss">var/cron/log</rule>
+			<rule action="1" id="848" method="*" rtype="xss">var/saf/_log</rule>
+			<rule action="1" id="849" method="*" rtype="xss">var/saf/port/log</rule>
+			<rule action="1" id="850" method="*" rtype="xss">var/log/news.all</rule>
+			<rule action="1" id="851" method="*" rtype="xss">var/log/news/news.all</rule>
+			<rule action="1" id="852" method="*" rtype="xss">var/log/news/news.crit</rule>
+			<rule action="1" id="853" method="*" rtype="xss">var/log/news/news.err</rule>
+			<rule action="1" id="854" method="*" rtype="xss">var/log/news/news.notice</rule>
+			<rule action="1" id="855" method="*" rtype="xss">var/log/news/suck.err</rule>
+			<rule action="1" id="856" method="*" rtype="xss">var/log/news/suck.notice</rule>
+			<rule action="1" id="857" method="*" rtype="xss">var/log/messages</rule>
+			<rule action="1" id="858" method="*" rtype="xss">var/log/messages.1</rule>
+			<rule action="1" id="859" method="*" rtype="xss">var/log/user.log</rule>
+			<rule action="1" id="860" method="*" rtype="xss">var/log/user.log.1</rule>
+			<rule action="1" id="861" method="*" rtype="xss">var/log/auth.log</rule>
+			<rule action="1" id="862" method="*" rtype="xss">var/log/pm-powersave.log</rule>
+			<rule action="1" id="863" method="*" rtype="xss">var/log/xorg.0.log</rule>
+			<rule action="1" id="864" method="*" rtype="xss">var/log/daemon.log</rule>
+			<rule action="1" id="865" method="*" rtype="xss">var/log/daemon.log.1</rule>
+			<rule action="1" id="866" method="*" rtype="xss">var/log/kern.log</rule>
+			<rule action="1" id="867" method="*" rtype="xss">var/log/kern.log.1</rule>
+			<rule action="1" id="868" method="*" rtype="xss">var/log/mail.err</rule>
+			<rule action="1" id="869" method="*" rtype="xss">var/log/mail.info</rule>
+			<rule action="1" id="870" method="*" rtype="xss">var/log/mail.warn</rule>
+			<rule action="1" id="871" method="*" rtype="xss">var/log/ufw.log</rule>
+			<rule action="1" id="872" method="*" rtype="xss">var/log/boot.log</rule>
+			<rule action="1" id="873" method="*" rtype="xss">var/log/syslog</rule>
+			<rule action="1" id="874" method="*" rtype="xss">var/log/syslog.1</rule>
+			<rule action="1" id="875" method="*" rtype="xss">tmp/access.log</rule>
+			<rule action="1" id="876" method="*" rtype="xss">etc/sensors.conf</rule>
+			<rule action="1" id="877" method="*" rtype="xss">etc/sensors3.conf</rule>
+			<rule action="1" id="878" method="*" rtype="xss">etc/host.conf</rule>
+			<rule action="1" id="879" method="*" rtype="xss">etc/pam.conf</rule>
+			<rule action="1" id="880" method="*" rtype="xss">etc/resolv.conf</rule>
+			<rule action="1" id="881" method="*" rtype="xss">etc/apt/apt.conf</rule>
+			<rule action="1" id="882" method="*" rtype="xss">etc/inetd.conf</rule>
+			<rule action="1" id="883" method="*" rtype="xss">etc/syslog.conf</rule>
+			<rule action="1" id="884" method="*" rtype="xss">etc/sysctl.conf</rule>
+			<rule action="1" id="885" method="*" rtype="xss">etc/sysctl.d/10-console-messages.conf</rule>
+			<rule action="1" id="886" method="*" rtype="xss">etc/sysctl.d/10-network-security.conf</rule>
+			<rule action="1" id="887" method="*" rtype="xss">etc/sysctl.d/10-process-security.conf</rule>
+			<rule action="1" id="888" method="*" rtype="xss">etc/sysctl.d/wine.sysctl.conf</rule>
+			<rule action="1" id="889" method="*" rtype="xss">etc/security/access.conf</rule>
+			<rule action="1" id="890" method="*" rtype="xss">etc/security/group.conf</rule>
+			<rule action="1" id="891" method="*" rtype="xss">etc/security/limits.conf</rule>
+			<rule action="1" id="892" method="*" rtype="xss">etc/security/namespace.conf</rule>
+			<rule action="1" id="893" method="*" rtype="xss">etc/security/pam_env.conf</rule>
+			<rule action="1" id="894" method="*" rtype="xss">etc/security/sepermit.conf</rule>
+			<rule action="1" id="895" method="*" rtype="xss">etc/security/time.conf</rule>
+			<rule action="1" id="896" method="*" rtype="xss">etc/ssh/sshd_config</rule>
+			<rule action="1" id="897" method="*" rtype="xss">etc/adduser.conf</rule>
+			<rule action="1" id="898" method="*" rtype="xss">etc/deluser.conf</rule>
+			<rule action="1" id="899" method="*" rtype="xss">etc/avahi/avahi-daemon.conf</rule>
+			<rule action="1" id="900" method="*" rtype="xss">etc/ca-certificates.conf</rule>
+			<rule action="1" id="901" method="*" rtype="xss">etc/ca-certificates.conf.dpkg-old</rule>
+			<rule action="1" id="902" method="*" rtype="xss">etc/casper.conf</rule>
+			<rule action="1" id="903" method="*" rtype="xss">etc/chkrootkit.conf</rule>
+			<rule action="1" id="904" method="*" rtype="xss">etc/debconf.conf</rule>
+			<rule action="1" id="905" method="*" rtype="xss">etc/dns2tcpd.conf</rule>
+			<rule action="1" id="906" method="*" rtype="xss">etc/e2fsck.conf</rule>
+			<rule action="1" id="907" method="*" rtype="xss">etc/esound/esd.conf</rule>
+			<rule action="1" id="908" method="*" rtype="xss">etc/etter.conf</rule>
+			<rule action="1" id="909" method="*" rtype="xss">etc/fuse.conf</rule>
+			<rule action="1" id="910" method="*" rtype="xss">etc/foremost.conf</rule>
+			<rule action="1" id="911" method="*" rtype="xss">etc/hdparm.conf</rule>
+			<rule action="1" id="912" method="*" rtype="xss">etc/kernel-img.conf</rule>
+			<rule action="1" id="913" method="*" rtype="xss">etc/kernel-pkg.conf</rule>
+			<rule action="1" id="914" method="*" rtype="xss">etc/ld.so.conf</rule>
+			<rule action="1" id="915" method="*" rtype="xss">etc/ltrace.conf</rule>
+			<rule action="1" id="916" method="*" rtype="xss">etc/mail/sendmail.conf</rule>
+			<rule action="1" id="917" method="*" rtype="xss">etc/manpath.config</rule>
+			<rule action="1" id="918" method="*" rtype="xss">etc/kbd/config</rule>
+			<rule action="1" id="919" method="*" rtype="xss">etc/ldap/ldap.conf</rule>
+			<rule action="1" id="920" method="*" rtype="xss">etc/logrotate.conf</rule>
+			<rule action="1" id="921" method="*" rtype="xss">etc/mtools.conf</rule>
+			<rule action="1" id="922" method="*" rtype="xss">etc/smi.conf</rule>
+			<rule action="1" id="923" method="*" rtype="xss">etc/updatedb.conf</rule>
+			<rule action="1" id="924" method="*" rtype="xss">etc/pulse/client.conf</rule>
+			<rule action="1" id="925" method="*" rtype="xss">usr/share/adduser/adduser.conf</rule>
+			<rule action="1" id="926" method="*" rtype="xss">etc/hostname</rule>
+			<rule action="1" id="927" method="*" rtype="xss">etc/networks</rule>
+			<rule action="1" id="928" method="*" rtype="xss">etc/timezone</rule>
+			<rule action="1" id="929" method="*" rtype="xss">etc/modules</rule>
+			<rule action="1" id="930" method="*" rtype="xss">etc/passwd</rule>
+			<rule action="1" id="931" method="*" rtype="xss">etc/passwd~</rule>
+			<rule action="1" id="932" method="*" rtype="xss">etc/passwd-</rule>
+			<rule action="1" id="933" method="*" rtype="xss">etc/shadow</rule>
+			<rule action="1" id="934" method="*" rtype="xss">etc/shadow~</rule>
+			<rule action="1" id="935" method="*" rtype="xss">etc/shadow-</rule>
+			<rule action="1" id="936" method="*" rtype="xss">etc/fstab</rule>
+			<rule action="1" id="937" method="*" rtype="xss">etc/motd</rule>
+			<rule action="1" id="938" method="*" rtype="xss">etc/hosts</rule>
+			<rule action="1" id="939" method="*" rtype="xss">etc/group</rule>
+			<rule action="1" id="940" method="*" rtype="xss">etc/group-</rule>
+			<rule action="1" id="941" method="*" rtype="xss">etc/alias</rule>
+			<rule action="1" id="942" method="*" rtype="xss">etc/crontab</rule>
+			<rule action="1" id="943" method="*" rtype="xss">etc/crypttab</rule>
+			<rule action="1" id="944" method="*" rtype="xss">etc/exports</rule>
+			<rule action="1" id="945" method="*" rtype="xss">etc/mtab</rule>
+			<rule action="1" id="946" method="*" rtype="xss">etc/hosts.allow</rule>
+			<rule action="1" id="947" method="*" rtype="xss">etc/hosts.deny</rule>
+			<rule action="1" id="948" method="*" rtype="xss">etc/os-release</rule>
+			<rule action="1" id="949" method="*" rtype="xss">etc/password.master</rule>
+			<rule action="1" id="950" method="*" rtype="xss">etc/profile</rule>
+			<rule action="1" id="951" method="*" rtype="xss">etc/default/grub</rule>
+			<rule action="1" id="952" method="*" rtype="xss">etc/resolvconf/update-libc.d/sendmail</rule>
+			<rule action="1" id="953" method="*" rtype="xss">etc/inittab</rule>
+			<rule action="1" id="954" method="*" rtype="xss">etc/issue</rule>
+			<rule action="1" id="955" method="*" rtype="xss">etc/issue.net</rule>
+			<rule action="1" id="956" method="*" rtype="xss">etc/login.defs</rule>
+			<rule action="1" id="957" method="*" rtype="xss">etc/sudoers</rule>
+			<rule action="1" id="958" method="*" rtype="xss">etc/sysconfig/network-scripts/ifcfg-eth0</rule>
+			<rule action="1" id="959" method="*" rtype="xss">etc/redhat-release</rule>
+			<rule action="1" id="960" method="*" rtype="xss">etc/debian_version</rule>
+			<rule action="1" id="961" method="*" rtype="xss">etc/fedora-release</rule>
+			<rule action="1" id="962" method="*" rtype="xss">etc/mandrake-release</rule>
+			<rule action="1" id="963" method="*" rtype="xss">etc/slackware-release</rule>
+			<rule action="1" id="964" method="*" rtype="xss">etc/suse-release</rule>
+			<rule action="1" id="965" method="*" rtype="xss">etc/security/group</rule>
+			<rule action="1" id="966" method="*" rtype="xss">etc/security/passwd</rule>
+			<rule action="1" id="967" method="*" rtype="xss">etc/security/user</rule>
+			<rule action="1" id="968" method="*" rtype="xss">etc/security/environ</rule>
+			<rule action="1" id="969" method="*" rtype="xss">etc/security/limits</rule>
+			<rule action="1" id="970" method="*" rtype="xss">etc/security/opasswd</rule>
+			<rule action="1" id="971" method="*" rtype="xss">boot/grub/grub.cfg</rule>
+			<rule action="1" id="972" method="*" rtype="xss">boot/grub/menu.lst</rule>
+			<rule action="1" id="973" method="*" rtype="xss">root/.ksh_history</rule>
+			<rule action="1" id="974" method="*" rtype="xss">root/.xauthority</rule>
+			<rule action="1" id="975" method="*" rtype="xss">usr/lib/security/mkuser.default</rule>
+			<rule action="1" id="976" method="*" rtype="xss">var/log/squirrelmail.log</rule>
+			<rule action="1" id="977" method="*" rtype="xss">var/log/apache2/squirrelmail.log</rule>
+			<rule action="1" id="978" method="*" rtype="xss">var/log/apache2/squirrelmail.err.log</rule>
+			<rule action="1" id="979" method="*" rtype="xss">var/lib/squirrelmail/prefs/squirrelmail.log</rule>
+			<rule action="1" id="980" method="*" rtype="xss">var/log/mail.log</rule>
+			<rule action="1" id="981" method="*" rtype="xss">etc/squirrelmail/apache.conf</rule>
+			<rule action="1" id="982" method="*" rtype="xss">etc/squirrelmail/config_local.php</rule>
+			<rule action="1" id="983" method="*" rtype="xss">etc/squirrelmail/default_pref</rule>
+			<rule action="1" id="984" method="*" rtype="xss">etc/squirrelmail/index.php</rule>
+			<rule action="1" id="985" method="*" rtype="xss">etc/squirrelmail/config_default.php</rule>
+			<rule action="1" id="986" method="*" rtype="xss">etc/squirrelmail/config.php</rule>
+			<rule action="1" id="987" method="*" rtype="xss">etc/squirrelmail/filters_setup.php</rule>
+			<rule action="1" id="988" method="*" rtype="xss">etc/squirrelmail/sqspell_config.php</rule>
+			<rule action="1" id="989" method="*" rtype="xss">etc/squirrelmail/config/config.php</rule>
+			<rule action="1" id="990" method="*" rtype="xss">etc/httpd/conf.d/squirrelmail.conf</rule>
+			<rule action="1" id="991" method="*" rtype="xss">usr/share/squirrelmail/config/config.php</rule>
+			<rule action="1" id="992" method="*" rtype="xss">private/etc/squirrelmail/config/config.php</rule>
+			<rule action="1" id="993" method="*" rtype="xss">srv/www/htdos/squirrelmail/config/config.php</rule>
+			<rule action="1" id="994" method="*" rtype="xss">var/www/squirrelmail/config/config.php</rule>
+			<rule action="1" id="995" method="*" rtype="xss">var/www/html/squirrelmail/config/config.php</rule>
+			<rule action="1" id="996" method="*" rtype="xss">var/www/html/squirrelmail-1.2.9/config/config.php</rule>
+			<rule action="1" id="997" method="*" rtype="xss">usr/share/squirrelmail/plugins/squirrel_logger/setup.php</rule>
+			<rule action="1" id="998" method="*" rtype="xss">usr/local/squirrelmail/www/readme</rule>
+			<rule action="1" id="999" method="*" rtype="xss">windows/system32/drivers/etc/hosts</rule>
+			<rule action="1" id="1000" method="*" rtype="xss">windows/system32/drivers/etc/lmhosts.sam</rule>
+			<rule action="1" id="1001" method="*" rtype="xss">windows/system32/drivers/etc/networks</rule>
+			<rule action="1" id="1002" method="*" rtype="xss">windows/system32/drivers/etc/protocol</rule>
+			<rule action="1" id="1003" method="*" rtype="xss">windows/system32/drivers/etc/services</rule>
+			<rule action="1" id="1004" method="*" rtype="xss">/boot.ini</rule>
+			<rule action="1" id="1005" method="*" rtype="xss">windows/debug/netsetup.log</rule>
+			<rule action="1" id="1006" method="*" rtype="xss">windows/comsetup.log</rule>
+			<rule action="1" id="1007" method="*" rtype="xss">windows/repair/setup.log</rule>
+			<rule action="1" id="1008" method="*" rtype="xss">windows/setupact.log</rule>
+			<rule action="1" id="1009" method="*" rtype="xss">windows/setupapi.log</rule>
+			<rule action="1" id="1010" method="*" rtype="xss">windows/setuperr.log</rule>
+			<rule action="1" id="1011" method="*" rtype="xss">windows/updspapi.log</rule>
+			<rule action="1" id="1012" method="*" rtype="xss">windows/wmsetup.log</rule>
+			<rule action="1" id="1013" method="*" rtype="xss">windows/windowsupdate.log</rule>
+			<rule action="1" id="1014" method="*" rtype="xss">windows/odbc.ini</rule>
+			<rule action="1" id="1015" method="*" rtype="xss">usr/local/psa/admin/htdocs/domains/databases/phpmyadmin/libraries/config.default.php</rule>
+			<rule action="1" id="1016" method="*" rtype="xss">etc/apache2/conf.d/phpmyadmin.conf</rule>
+			<rule action="1" id="1017" method="*" rtype="xss">etc/phpmyadmin/config.inc.php</rule>
+			<rule action="1" id="1018" method="*" rtype="xss">etc/openldap/ldap.conf</rule>
+			<rule action="1" id="1019" method="*" rtype="xss">etc/cups/acroread.conf</rule>
+			<rule action="1" id="1020" method="*" rtype="xss">etc/cups/cupsd.conf</rule>
+			<rule action="1" id="1021" method="*" rtype="xss">etc/cups/cupsd.conf.default</rule>
+			<rule action="1" id="1022" method="*" rtype="xss">etc/cups/pdftops.conf</rule>
+			<rule action="1" id="1023" method="*" rtype="xss">etc/cups/printers.conf</rule>
+			<rule action="1" id="1024" method="*" rtype="xss">windows/system32/macromed/flash/flashinstall.log</rule>
+			<rule action="1" id="1025" method="*" rtype="xss">windows/system32/macromed/flash/install.log</rule>
+			<rule action="1" id="1026" method="*" rtype="xss">etc/cvs-cron.conf</rule>
+			<rule action="1" id="1027" method="*" rtype="xss">etc/cvs-pserver.conf</rule>
+			<rule action="1" id="1028" method="*" rtype="xss">etc/subversion/config</rule>
+			<rule action="1" id="1029" method="*" rtype="xss">etc/modprobe.d/vmware-tools.conf</rule>
+			<rule action="1" id="1030" method="*" rtype="xss">etc/updatedb.conf.beforevmwaretoolsinstall</rule>
+			<rule action="1" id="1031" method="*" rtype="xss">etc/vmware-tools/config</rule>
+			<rule action="1" id="1032" method="*" rtype="xss">etc/vmware-tools/tpvmlp.conf</rule>
+			<rule action="1" id="1033" method="*" rtype="xss">etc/vmware-tools/vmware-tools-libraries.conf</rule>
+			<rule action="1" id="1034" method="*" rtype="xss">var/log/vmware/hostd.log</rule>
+			<rule action="1" id="1035" method="*" rtype="xss">var/log/vmware/hostd-1.log</rule>
+			<!--# Wordpress-->
+			<rule action="1" id="1036" method="*" rtype="xss">wp-config.php</rule>
+			<!--# Symfony-->
+			<rule action="1" id="1037" method="*" rtype="xss">config.yml</rule>
+			<rule action="1" id="1038" method="*" rtype="xss">config_dev.yml</rule>
+			<rule action="1" id="1039" method="*" rtype="xss">config_prod.yml</rule>
+			<rule action="1" id="1040" method="*" rtype="xss">config_test.yml</rule>
+			<rule action="1" id="1041" method="*" rtype="xss">parameters.yml</rule>
+			<rule action="1" id="1042" method="*" rtype="xss">routing.yml</rule>
+			<rule action="1" id="1043" method="*" rtype="xss">security.yml</rule>
+			<rule action="1" id="1044" method="*" rtype="xss">services.yml</rule>
+			<!--# Drupal-->
+			<rule action="1" id="1045" method="*" rtype="xss">sites/default/default.settings.php</rule>
+			<rule action="1" id="1046" method="*" rtype="xss">sites/default/settings.php</rule>
+			<!--# Magento-->
+			<rule action="1" id="1047" method="*" rtype="xss">app/etc/local.xml</rule>
+			<!--# Sublime Text-->
+			<rule action="1" id="1048" method="*" rtype="xss">sftp-config.json</rule>
+			<!--# ASP.NET-->
+			<rule action="1" id="1049" method="*" rtype="xss">Web.config</rule>
+			<!--# vBulletin-->
+			<rule action="1" id="1050" method="*" rtype="xss">includes/config.php</rule>
+			<!--# OSCommerce-->
+			<rule action="1" id="1051" method="*" rtype="xss">includes/configure.php</rule>
+			<!--# phpMyAdmin-->
+			<rule action="1" id="1052" method="*" rtype="xss">config.inc.php</rule>
+			<!--# MediaWiki-->
+			<rule action="1" id="1053" method="*" rtype="xss">LocalSettings.php</rule>
+			<!--# MyBB-->
+			<rule action="1" id="1054" method="*" rtype="xss">inc/config.php</rule>
+			<!--# TYPO3-->
+			<rule action="1" id="1055" method="*" rtype="xss">typo3conf/localconf.php</rule>
+			<!--# Laravel-->
+			<!--# Note: these entries might be benign in REQUEST_FILENAME-->
+			<rule action="1" id="1056" method="*" rtype="xss">config/app.php</rule>
+			<rule action="1" id="1057" method="*" rtype="xss">config/custom.php</rule>
+			<rule action="1" id="1058" method="*" rtype="xss">config/database.php</rule>
+			<!--# Joomla-->
+			<!--# Note: this string might be benign in REQUEST_FILENAME-->
+			<rule action="1" id="1059" method="*" rtype="xss">/configuration.php</rule>
+			<!--# phpBB-->
+			<!--# Note: this string might be benign in REQUEST_FILENAME-->
+			<rule action="1" id="1060" method="*" rtype="xss">/config.php</rule>
+			<rule action="1" id="1061" method="*" rtype="xss">^(?i)(?:file|ftps?|https?):\/\/(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})</rule>
+			<rule action="1" id="1062" method="*" rtype="xss">^(?i)(?:file|ftps?|https?)(.*?)\?+$</rule>
+			<rule action="1" id="1063" method="*" rtype="xss">(?i)(?:\W|^)(?:javascript:(?:[\s\S]+[=\\\(\[\.&lt;]|[\s\S]*?(?:\bname\b|\\[ux]\d))|data:(?:(?:[a-z]\w+\/\w[\w+-]+\w)?[;,]|[\s\S]*?;[\s\S]*?\b(?:base64|charset=)|[\s\S]*?,[\s\S]*?&lt;[\s\S]*?\w[\s\S]*?&gt;))|@\W*?i\W*?m\W*?p\W*?o\W*?r\W*?t\W*?(?:\/\*[\s\S]*?)?(?:[\&quot;']|\W*?u\W*?r\W*?l[\s\S]*?\()|\W*?-\W*?m\W*?o\W*?z\W*?-\W*?b\W*?i\W*?n\W*?d\W*?i\W*?n\W*?g[\s\S]*?:[\s\S]*?\W*?u\W*?r\W*?l[\s\S]*?\(</rule>
+		</field>
+		<field attr="cookie" phase="1">
+			<rule action="1" id="1064" method="*" rtype="xss">\.\./</rule>
+			<rule action="1" id="1065" method="*" rtype="xss">\:\$</rule>
+			<rule action="1" id="1066" method="*" rtype="xss">\$\{</rule>
+			<rule action="1" id="1067" method="*" rtype="xss">select.+(from|limit)</rule>
+			<rule action="1" id="1068" method="*" rtype="xss">(?:(union(.*?)select))</rule>
+			<rule action="1" id="1069" method="*" rtype="xss">having|rongjitest</rule>
+			<rule action="1" id="1070" method="*" rtype="xss">sleep\((\s*)(\d*)(\s*)\)</rule>
+			<rule action="1" id="1071" method="*" rtype="xss">benchmark\((.*)\,(.*)\)</rule>
+			<rule action="1" id="1072" method="*" rtype="xss">base64_decode\(</rule>
+			<rule action="1" id="1073" method="*" rtype="xss">(?:from\W+information_schema\W)</rule>
+			<rule action="1" id="1074" method="*" rtype="xss">(?:(?:current_)user|database|schema|connection_id)\s*\(</rule>
+			<rule action="1" id="1075" method="*" rtype="xss">(?:etc\/\W*passwd)</rule>
+			<rule action="1" id="1076" method="*" rtype="xss">into(\s+)+(?:dump|out)file\s*</rule>
+			<rule action="1" id="1077" method="*" rtype="xss">group\s+by.+\(</rule>
+			<rule action="1" id="1078" method="*" rtype="xss">xwork.MethodAccessor</rule>
+			<rule action="1" id="1079" method="*" rtype="xss">(?:define|eval|file_get_contents|include|require|require_once|shell_exec|phpinfo|system|passthru|preg_\w+|execute|echo|print|print_r|var_dump|(fp)open|alert|showmodaldialog)\(</rule>
+			<rule action="1" id="1080" method="*" rtype="xss">xwork\.MethodAccessor</rule>
+			<rule action="1" id="1081" method="*" rtype="xss">(gopher|doc|php|glob|file|phar|zlib|ftp|ldap|dict|ogg|data)\:\/</rule>
+			<rule action="1" id="1082" method="*" rtype="xss">java\.lang</rule>
+			<rule action="1" id="1083" method="*" rtype="xss">\$_(GET|post|cookie|files|session|env|phplib|GLOBALS|SERVER)\[</rule>
+		</field>
+		<field attr="requestbody" phase="1">
+			<rule action="1" id="1084" method="*" rtype="xss">select.+(from|limit)</rule>
+			<rule action="1" id="1085" method="*" rtype="xss">(?:(union(.*?)select))</rule>
+			<rule action="1" id="1086" method="*" rtype="xss">having|rongjitest</rule>
+			<rule action="1" id="1087" method="*" rtype="xss">sleep\((\s*)(\d*)(\s*)\)</rule>
+			<rule action="1" id="1088" method="*" rtype="xss">benchmark\((.*)\,(.*)\)</rule>
+			<rule action="1" id="1089" method="*" rtype="xss">base64_decode\(</rule>
+			<rule action="1" id="1090" method="*" rtype="xss">(?:from\W+information_schema\W)</rule>
+			<rule action="1" id="1091" method="*" rtype="xss">(?:(?:current_)user|database|schema|connection_id)\s*\(</rule>
+			<rule action="1" id="1092" method="*" rtype="xss">(?:etc\/\W*passwd)</rule>
+			<rule action="1" id="1093" method="*" rtype="xss">into(\s+)+(?:dump|out)file\s*</rule>
+			<rule action="1" id="1094" method="*" rtype="xss">group\s+by.+\(</rule>
+			<rule action="1" id="1095" method="*" rtype="xss">xwork.MethodAccessor</rule>
+			<rule action="1" id="1096" method="*" rtype="xss">(?:define|eval|file_get_contents|include|require|require_once|shell_exec|phpinfo|system|passthru|preg_\w+|execute|echo|print|print_r|var_dump|(fp)open|alert|showmodaldialog)\(</rule>
+			<rule action="1" id="1097" method="*" rtype="xss">xwork\.MethodAccessor</rule>
+			<rule action="1" id="1098" method="*" rtype="xss">(gopher|doc|php|glob|file|phar|zlib|ftp|ldap|dict|ogg|data)\:\/</rule>
+			<rule action="1" id="1099" method="*" rtype="xss">java\.lang</rule>
+			<rule action="1" id="1100" method="*" rtype="xss">\$_(GET|post|cookie|files|session|env|phplib|GLOBALS|SERVER)\[</rule>
+			<rule action="1" id="1101" method="*" rtype="xss">\&lt;(iframe|script|body|img|layer|div|meta|style|base|object|input)</rule>
+			<rule action="1" id="1102" method="*" rtype="xss">(onmouseover|onerror|onload)\=</rule>
+		</field>
+		<field attr="responsebody" phase="2">
+			<rule action="1" id="1103" method="*" rtype="xss">(?i)(?:JET Database Engine|Access Database Engine|\[Microsoft\]\[ODBC Microsoft Access Driver\])</rule>
+			<rule action="1" id="1104" method="*" rtype="xss">(?i)(?:ORA-[0-9][0-9][0-9][0-9]|java\.sql\.SQLException|Oracle error|Oracle.*Driver|Warning.*oci_.*|Warning.*ora_.*)</rule>
+			<rule action="1" id="1105" method="*" rtype="xss">(?i)(?:DB2 SQL error:|\[IBM\]\[CLI Driver\]\[DB2/6000\]|CLI Driver.*DB2|DB2 SQL error|db2_\w+\()</rule>
+			<rule action="1" id="1106" method="*" rtype="xss">(?i)(?:\[DM_QUERY_E_SYNTAX\]|has occurred in the vicinity of:)</rule>
+			<rule action="1" id="1107" method="*" rtype="xss">(?i)(?:Dynamic SQL Error)</rule>
+			<rule action="1" id="1108" method="*" rtype="xss">(?i)(?:Exception (condition )?\d+\. Transaction rollback\.)</rule>
+			<rule action="1" id="1109" method="*" rtype="xss">(?i)(?:org\.hsqldb\.jdbc)</rule>
+			<rule action="1" id="1110" method="*" rtype="xss">(?i)(?:An illegal character has been found in the statement|com\.informix\.jdbc|Exception.*Informix)</rule>
+			<rule action="1" id="1111" method="*" rtype="xss">(?i)(?:Warning.*ingres_|Ingres SQLSTATE|Ingres\W.*Driver)</rule>
+			<rule action="1" id="1112" method="*" rtype="xss">(?i)(?:&lt;b&gt;Warning&lt;/b&gt;: ibase_|Unexpected end of command in statement)</rule>
+			<rule action="1" id="1113" method="*" rtype="xss">(?i)(?:SQL error.*POS([0-9]+).*|Warning.*maxdb.*)</rule>
+			<rule action="1" id="1114" method="*" rtype="xss">(?i)(?:System\.Data\.OleDb\.OleDbException|\[Microsoft\]\[ODBC SQL Server Driver\]|\[Macromedia\]\[SQLServer JDBC Driver\]|\[SqlException|System\.Data\.SqlClient\.SqlException|Unclosed quotation mark after the character string|'80040e14'|mssql_query\(\)|Microsoft OLE DB Provider for ODBC Drivers|Microsoft OLE DB Provider for SQL Server|Incorrect syntax near|Sintaxis incorrecta cerca de|Syntax error in string in query expression|Procedure or function .* expects parameter|Unclosed quotation mark before the character string|Syntax error .* in query expression|Data type mismatch in criteria expression\.|ADODB\.Field \(0x800A0BCD\)|the used select statements have different number of columns|OLE DB.*SQL Server|Warning.*mssql_.*|Driver.*SQL[\-\_\ ]*Server|SQL Server.*Driver|SQL Server.*[0-9a-fA-F]{8}|Exception.*\WSystem\.Data\.SqlClient\.)</rule>
+			<rule action="1" id="1115" method="*" rtype="xss">(?i)(?:supplied argument is not a valid MySQL|Column count doesn't match value count at row|mysql_fetch_array\(\)|on MySQL result index|You have an error in your SQL syntax;|You have an error in your SQL syntax near|MySQL server version for the right syntax to use|\[MySQL\]\[ODBC|Column count doesn't match|Table '[^']+' doesn't exist|SQL syntax.*MySQL|Warning.*mysql_.*|valid MySQL result|MySqlClient\.)</rule>
+			<rule action="1" id="1116" method="*" rtype="xss">(?i)(?:PostgreSQL query failed:|pg_query\(\) \[:|pg_exec\(\) \[:|PostgreSQL.*ERROR|Warning.*pg_.*|valid PostgreSQL result|Npgsql\.|PG::([a-zA-Z]*)Error|Supplied argument is not a valid PostgreSQL (?:.*?) resource|Unable to connect to PostgreSQL server)</rule>
+			<rule action="1" id="1117" method="*" rtype="xss">(?i)(?:Warning.*sqlite_.*|Warning.*SQLite3::|SQLite/JDBCDriver|SQLite\.Exception|System\.Data\.SQLite\.SQLiteException)</rule>
+			<rule action="1" id="1118" method="*" rtype="xss">(?i)(?:Sybase message:|Warning.*sybase.*|Sybase.*Server message.*)</rule>
+		</field>
+		<field attr="user_agent" phase="1">
+			<!--# Vulnerability scanners, bruteforce password crackers and exploitation tools-->
+			<!--# password cracker-->
+			<!--# http://sectools.org/tool/hydra/-->
+			<rule action="1" id="1119" method="*" rtype="xss">(hydra)</rule>
+			<!--# vuln scanner-->
+			<!--# http://virtualblueness.net/nasl.html-->
+			<rule action="1" id="1120" method="*" rtype="xss">.nasl</rule>
+			<!--# sql injection-->
+			<!--# https://sourceforge.net/projects/absinthe/-->
+			<rule action="1" id="1121" method="*" rtype="xss">absinthe</rule>
+			<!--# email harvesting-->
+			<!--# dead? 2004-->
+			<rule action="1" id="1122" method="*" rtype="xss">advanced email extractor</rule>
+			<!--# vuln scanner-->
+			<!--# http://www.arachni-scanner.com/-->
+			<rule action="1" id="1123" method="*" rtype="xss">arachni/</rule>
+			<!--#-->
+			<rule action="1" id="1124" method="*" rtype="xss">autogetcontent</rule>
+			<!--# nessus frontend-->
+			<!--# http://www.crossley-nilsen.com/Linux/Bilbo_-_Nessus_WEB/bilbo_-_nessus_web.html-->
+			<!--# dead? 2003-->
+			<rule action="1" id="1125" method="*" rtype="xss">bilbo</rule>
+			<!--# Backup File Artifacts Checker-->
+			<!--# https://github.com/mazen160/bfac-->
+			<rule action="1" id="1126" method="*" rtype="xss">BFAC</rule>
+			<!--# password cracker-->
+			<!--# http://sectools.org/tool/brutus/-->
+			<rule action="1" id="1127" method="*" rtype="xss">brutus</rule>
+			<rule action="1" id="1128" method="*" rtype="xss">brutus/aet</rule>
+			<!--# sql injection-->
+			<!--# https://www.notsosecure.com/bsqlbf-v2-blind-sql-injection-brute-forcer/-->
+			<rule action="1" id="1129" method="*" rtype="xss">bsqlbf</rule>
+			<!--# vuln scanner-->
+			<!--# http://freecode.com/projects/cgichk dead? 2001-->
+			<rule action="1" id="1130" method="*" rtype="xss">cgichk</rule>
+			<!--# vuln scanner-->
+			<!--# https://sourceforge.net/projects/cisco-torch/-->
+			<rule action="1" id="1131" method="*" rtype="xss">cisco-torch</rule>
+			<!--# vuln scanner-->
+			<!--# https://github.com/stasinopoulos/commix-->
+			<rule action="1" id="1132" method="*" rtype="xss">commix</rule>
+			<!--# MS FrontPage vuln scanner?-->
+			<rule action="1" id="1133" method="*" rtype="xss">core-project/1.0</rule>
+			<!--# vuln scanner?-->
+			<rule action="1" id="1134" method="*" rtype="xss">crimscanner/</rule>
+			<!--# vuln scanner-->
+			<rule action="1" id="1135" method="*" rtype="xss">datacha0s</rule>
+			<!--# hidden page scanner-->
+			<!--# https://www.owasp.org/index.php/Category:OWASP_DirBuster_Project-->
+			<rule action="1" id="1136" method="*" rtype="xss">dirbuster</rule>
+			<!--# vuln scanner-->
+			<!--# https://sourceforge.net/projects/dominohunter/-->
+			<rule action="1" id="1137" method="*" rtype="xss">domino hunter</rule>
+			<!--# vuln scanner - directory traversal fuzzer-->
+			<!--# https://github.com/wireghoul/dotdotpwn-->
+			<rule action="1" id="1138" method="*" rtype="xss">dotdotpwn</rule>
+			<!--#-->
+			<!--#-->
+			<rule action="1" id="1139" method="*" rtype="xss">email extractor</rule>
+			<!--# vuln scanner-->
+			<rule action="1" id="1140" method="*" rtype="xss">fhscan core 1.</rule>
+			<!--#-->
+			<rule action="1" id="1141" method="*" rtype="xss">floodgate</rule>
+			<!--#-->
+			<rule action="1" id="1142" method="*" rtype="xss">get-minimal</rule>
+			<!--# vuln scanner-->
+			<rule action="1" id="1143" method="*" rtype="xss">gootkit auto-rooter scanner</rule>
+			<!--#-->
+			<rule action="1" id="1144" method="*" rtype="xss">grabber</rule>
+			<!--# vuln scanner-->
+			<!--# https://sourceforge.net/projects/grendel/-->
+			<rule action="1" id="1145" method="*" rtype="xss">grendel-scan</rule>
+			<!--# sql injection-->
+			<rule action="1" id="1146" method="*" rtype="xss">havij</rule>
+			<!--# vuln scanner - path disclosure finder-->
+			<!--# http://seclists.org/fulldisclosure/2010/Sep/375-->
+			<rule action="1" id="1147" method="*" rtype="xss">inspath</rule>
+			<!--#-->
+			<rule action="1" id="1148" method="*" rtype="xss">internet ninja</rule>
+			<!--# vuln scanner-->
+			<rule action="1" id="1149" method="*" rtype="xss">jaascois</rule>
+			<!--# vuln scanner-->
+			<rule action="1" id="1150" method="*" rtype="xss">zmeu</rule>
+			<!--# port scanner-->
+			<!--# https://github.com/robertdavidgraham/masscan-->
+			<rule action="1" id="1151" method="*" rtype="xss">masscan</rule>
+			<!--# vuln scanner-->
+			<!--# http://www.severus.org/sacha/metis/-->
+			<rule action="1" id="1152" method="*" rtype="xss">metis</rule>
+			<!--# vuln scanner-->
+			<rule action="1" id="1153" method="*" rtype="xss">morfeus fucking scanner</rule>
+			<!--# sql injection-->
+			<!--# https://github.com/dtrip/mysqloit-->
+			<rule action="1" id="1154" method="*" rtype="xss">mysqloit</rule>
+			<!--# vuln scanner-->
+			<!--# http://www.nstalker.com/-->
+			<rule action="1" id="1155" method="*" rtype="xss">n-stealth</rule>
+			<!--# vuln scanner-->
+			<!--# http://www.tenable.com/products/nessus-vulnerability-scanner-->
+			<rule action="1" id="1156" method="*" rtype="xss">nessus</rule>
+			<!--# vuln scanner-->
+			<!--# https://www.netsparker.com/web-vulnerability-scanner/-->
+			<rule action="1" id="1157" method="*" rtype="xss">netsparker</rule>
+			<!--# vuln scanner-->
+			<!--# https://cirt.net/Nikto2-->
+			<rule action="1" id="1158" method="*" rtype="xss">nikto</rule>
+			<!--# vuln scanner-->
+			<rule action="1" id="1159" method="*" rtype="xss">nmap nse</rule>
+			<rule action="1" id="1160" method="*" rtype="xss">nmap scripting engine</rule>
+			<rule action="1" id="1161" method="*" rtype="xss">nmap-nse</rule>
+			<!--# vuln scanner-->
+			<!--# http://www.nsauditor.com/-->
+			<rule action="1" id="1162" method="*" rtype="xss">nsauditor</rule>
+			<!--# vuln scanner-->
+			<!--# http://www.openvas.org/-->
+			<rule action="1" id="1163" method="*" rtype="xss">openvas</rule>
+			<!--# sql injection-->
+			<!--# http://www.vealtel.com/software/nosec/pangolin/-->
+			<rule action="1" id="1164" method="*" rtype="xss">pangolin</rule>
+			<!--# web proxy & vuln scanner-->
+			<!--# https://sourceforge.net/projects/paros/-->
+			<rule action="1" id="1165" method="*" rtype="xss">paros</rule>
+			<!--# phpmyadmin vuln scanner-->
+			<!--# dead 2005?-->
+			<rule action="1" id="1166" method="*" rtype="xss">pmafind</rule>
+			<!--#-->
+			<rule action="1" id="1167" method="*" rtype="xss">prog.customcrawler</rule>
+			<!--# vuln scanner-->
+			<!--# https://www.qualys.com/suite/web-application-scanning/-->
+			<rule action="1" id="1168" method="*" rtype="xss">qualys was</rule>
+			<!--#-->
+			<rule action="1" id="1169" method="*" rtype="xss">s.t.a.l.k.e.r.</rule>
+			<!--#-->
+			<rule action="1" id="1170" method="*" rtype="xss">security scan</rule>
+			<!--# vuln scanner-->
+			<!--# https://sourceforge.net/projects/springenwerk/-->
+			<rule action="1" id="1171" method="*" rtype="xss">springenwerk</rule>
+			<!--# sql injection-->
+			<!--# http://www.sqlpowerinjector.com/-->
+			<rule action="1" id="1172" method="*" rtype="xss">sql power injector</rule>
+			<!--# sql injection-->
+			<!--# http://sqlmap.org/-->
+			<rule action="1" id="1173" method="*" rtype="xss">sqlmap</rule>
+			<!--# sql injection-->
+			<!--# http://sqlninja.sourceforge.net/-->
+			<rule action="1" id="1174" method="*" rtype="xss">sqlninja</rule>
+			<!--# password cracker-->
+			<!--# http://foofus.net/goons/jmk/medusa/medusa.html-->
+			<rule action="1" id="1175" method="*" rtype="xss">teh forest lobster</rule>
+			<!--#-->
+			<rule action="1" id="1176" method="*" rtype="xss">this is an exploit</rule>
+			<!--# vuln scanner?-->
+			<rule action="1" id="1177" method="*" rtype="xss">toata dragostea</rule>
+			<rule action="1" id="1178" method="*" rtype="xss">toata dragostea mea pentru diavola</rule>
+			<!--# SQL bot-->
+			<!--# http://tools.cisco.com/security/center/viewIpsSignature.x?signatureId=22142&signatureSubId=0-->
+			<rule action="1" id="1179" method="*" rtype="xss">uil2pn</rule>
+			<!--# badly scripted UAs (e.g. User-Agent: User-Agent: foo)-->
+			<rule action="1" id="1180" method="*" rtype="xss">user-agent:</rule>
+			<!--# vuln scannr-->
+			<!--# https://subgraph.com/vega/-->
+			<rule action="1" id="1181" method="*" rtype="xss">vega/</rule>
+			<!--# vuln scanner-->
+			<!--# dead?-->
+			<rule action="1" id="1182" method="*" rtype="xss">voideye</rule>
+			<!--# vuln scanner-->
+			<!--# http://w3af.org/-->
+			<rule action="1" id="1183" method="*" rtype="xss">w3af.sf.net</rule>
+			<rule action="1" id="1184" method="*" rtype="xss">w3af.sourceforge.net</rule>
+			<rule action="1" id="1185" method="*" rtype="xss">w3af.org</rule>
+			<!--# site scanner (legacy)-->
+			<!--# http://www.robotstxt.org/db/webbandit.html-->
+			<rule action="1" id="1186" method="*" rtype="xss">webbandit</rule>
+			<!--# vuln scanner-->
+			<!--# http://www8.hp.com/us/en/software-solutions/webinspect-dynamic-analysis-dast/-->
+			<rule action="1" id="1187" method="*" rtype="xss">webinspect</rule>
+			<!--# site scanner-->
+			<!--# http://www.scrt.ch/en/attack/downloads/webshag-->
+			<rule action="1" id="1188" method="*" rtype="xss">webshag</rule>
+			<!--# vuln scanner-->
+			<!--# dead?-->
+			<rule action="1" id="1189" method="*" rtype="xss">webtrends security analyzer</rule>
+			<!--# vuln scanner-->
+			<!--# https://github.com/hhucn/webvulnscan-->
+			<rule action="1" id="1190" method="*" rtype="xss">webvulnscan</rule>
+			<!--# web technology scanner-->
+			<!--# https://www.morningstarsecurity.com/research/whatweb-->
+			<rule action="1" id="1191" method="*" rtype="xss">whatweb</rule>
+			<!--# vuln scanner-->
+			<rule action="1" id="1192" method="*" rtype="xss">whcc/</rule>
+			<!--# exploit poc-->
+			<rule action="1" id="1193" method="*" rtype="xss">wordpress hash grabber</rule>
+			<!--# exploit-->
+			<rule action="1" id="1194" method="*" rtype="xss">xmlrpc exploit</rule>
+			<!--# wordpress vuln scanner-->
+			<!--# https://wpscan.org/-->
+			<rule action="1" id="1195" method="*" rtype="xss">WPScan</rule>
+			<!--# Generic HTTP clients (popular libraries)-->
+			<!--# http library-->
+			<!--# http://search.cpan.org/~opera/HTTP-DAV/DAV.pm-->
+			<rule action="1" id="1196" method="*" rtype="xss">dav.pm/v</rule>
+			<!--# http library-->
+			<!--# http://search.cpan.org/dist/libwww-perl/lib/LWP.pm-->
+			<rule action="1" id="1197" method="*" rtype="xss">libwww-perl</rule>
+			<!--# generic-->
+			<rule action="1" id="1198" method="*" rtype="xss">mozilla/4.0 (compatible)</rule>
+			<rule action="1" id="1199" method="*" rtype="xss">mozilla/4.0 (compatible; msie 6.0; win32)</rule>
+			<rule action="1" id="1200" method="*" rtype="xss">mozilla/5.0 sf/</rule>
+			<rule action="1" id="1201" method="*" rtype="xss">mozilla/5.0 sf//</rule>
+			<!--# http library-->
+			<!--# https://pypi.python.org/pypi/httplib2-->
+			<rule action="1" id="1202" method="*" rtype="xss">python-httplib2</rule>
+			<!--# http library-->
+			<!--# http://docs.python-requests.org/en/master/-->
+			<rule action="1" id="1203" method="*" rtype="xss">python-requests</rule>
+			<!--# http library-->
+			<!--# https://docs.python.org/2/library/urllib.html-->
+			<rule action="1" id="1204" method="*" rtype="xss">Python-urllib</rule>
+			<!--# http library-->
+			<!--# https://github.com/typhoeus/typhoeus-->
+			<rule action="1" id="1205" method="*" rtype="xss">typhoeus</rule>
+			<!--# http library-->
+			<!--# https://msdn.microsoft.com/en-us/library/windows/desktop/aa382925%28v=vs.85%29.aspx-->
+			<rule action="1" id="1206" method="*" rtype="xss">winhttp.winhttprequest</rule>
+			<!--# Search engine crawlers and other bots-->
+			<!--# site ripper-->
+			<!--# http://www.softbytelabs.com/en/BlackWidow/-->
+			<rule action="1" id="1207" method="*" rtype="xss">black widow</rule>
+			<rule action="1" id="1208" method="*" rtype="xss">blackwidow</rule>
+			<!--# crawler-->
+			<!--# 2006-->
+			<rule action="1" id="1209" method="*" rtype="xss">prowebwalker</rule>
+			<!--# generic crawler-->
+			<rule action="1" id="1210" method="*" rtype="xss">pymills-spider/</rule>
+			<!--# SEO-->
+			<!--# https://ahrefs.com/robot-->
+			<rule action="1" id="1211" method="*" rtype="xss">AhrefsBot</rule>
+			<!--# people database-->
+			<!--# https://pipl.com/bot/-->
+			<rule action="1" id="1212" method="*" rtype="xss">PiplBot</rule>
+			<!--# advertising targeting-->
+			<!--# https://www.grapeshot.com/crawler/-->
+			<rule action="1" id="1213" method="*" rtype="xss">GrapeshotCrawler/2.0</rule>
+			<rule action="1" id="1214" method="*" rtype="xss">grapeFX</rule>
+			<!--# SEO-->
+			<!--# http://www.searchmetrics.com/searchmetricsbot/-->
+			<rule action="1" id="1215" method="*" rtype="xss">SearchmetricsBot</rule>
+			<!--# SEO-->
+			<!--# https://moz.com/help/guides/moz-procedures/what-is-rogerbot-->
+			<rule action="1" id="1216" method="*" rtype="xss">rogerbot</rule>
+			<!--# SEO-->
+			<!--# http://www.majestic12.co.uk/projects/dsearch/mj12bot.php-->
+			<rule action="1" id="1217" method="*" rtype="xss">MJ12bot</rule>
+			<!--# news service-->
+			<rule action="1" id="1218" method="*" rtype="xss">Owlin bot</rule>
+			<!--# misbehaving spider-->
+			<rule action="1" id="1219" method="*" rtype="xss">Lingewoud-550-Spyder</rule>
+		</field>
+		<field attr="url" phase="2">
+			<rule action="1" id="1220" method="*" rtype="xss">\.(svn|htaccess|bash_history)</rule>
+			<rule action="1" id="1221" method="*" rtype="xss">\.(bak|inc|old|mdb|sql|backup|java|class)$</rule>
+			<rule action="1" id="1222" method="*" rtype="xss">(vhost|bbs|host|wwwroot|www|site|root|hytop|flashfxp).*\.rar</rule>
+			<rule action="1" id="1223" method="*" rtype="xss">(phpmyadmin|jmx-console|jmxinvokerservlet)</rule>
+			<rule action="1" id="1224" method="*" rtype="xss">java\.lang</rule>
+			<rule action="1" id="1225" method="*" rtype="xss">/(attachments|upimg|images|css|uploadfiles|html|uploads|templets|static|template|data|inc|forumdata|upload|includes|cache|avatar)/(\\w+).(php|jsp)</rule>
+			<rule action="1" id="1226" method="*" rtype="xss">/.adSensepostnottherenonobook</rule>
+			<rule action="1" id="1227" method="*" rtype="xss">/&lt;invalid&gt;hello.html</rule>
+			<rule action="1" id="1228" method="*" rtype="xss">/actSensepostnottherenonotive</rule>
+			<rule action="1" id="1229" method="*" rtype="xss">/acunetix-wvs-test-for-some-inexistent-file</rule>
+			<rule action="1" id="1230" method="*" rtype="xss">/antidisestablishmentarianism</rule>
+			<rule action="1" id="1231" method="*" rtype="xss">/appscan_fingerprint/mac_address</rule>
+			<rule action="1" id="1232" method="*" rtype="xss">/arachni-</rule>
+			<rule action="1" id="1233" method="*" rtype="xss">/cybercop</rule>
+			<rule action="1" id="1234" method="*" rtype="xss">/nessus_is_probing_you_</rule>
+			<rule action="1" id="1235" method="*" rtype="xss">/nessustest</rule>
+			<rule action="1" id="1236" method="*" rtype="xss">/netsparker-</rule>
+			<rule action="1" id="1237" method="*" rtype="xss">/rfiinc.txt</rule>
+			<rule action="1" id="1238" method="*" rtype="xss">/thereisnowaythat-you-canbethere</rule>
+			<rule action="1" id="1239" method="*" rtype="xss">/w3af/remotefileinclude.html</rule>
+			<rule action="1" id="1240" method="*" rtype="xss">appscan_fingerprint</rule>
+			<rule action="1" id="1241" method="*" rtype="xss">w00tw00t.at.ISC.SANS.DFind</rule>
+			<rule action="1" id="1242" method="*" rtype="xss">w00tw00t.at.blackhats.romanian.anti-sec</rule>
+			<rule action="1" id="1243" method="*" rtype="xss">\%((?!$|\W)|[0-9a-fA-F]{2}|u[0-9a-fA-F]{4})</rule>
+		</field>
+	</rules>

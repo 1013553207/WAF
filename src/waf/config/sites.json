@@ -1,0 +1,32 @@
+{
+    "client": {
+      "ip": "127.0.0.1",
+      "port": 80,
+      "host": ""
+    },
+     "server": {
+      "ip": "",
+      "port": 80,
+      "host": ""
+    },
+      "host2": {
+      "ip": "0.0.0.0",
+      "port": 80,
+      "host": ""
+    },
+    "connection": {
+        "host": "xxxxxx",
+        "port":3306,
+        "user":"xxxxxx",
+        "passwd": "xxxxxx",
+        "db":"waflog"
+      },
+    "redis":{
+      "host": "xxxxxx",
+      "port": 6379,
+      "user": "test",
+      "passwd": "xxxxxx",
+      "db": "db"
+    },
+    "bypass": true
+}

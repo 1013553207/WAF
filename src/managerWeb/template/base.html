@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Simple Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="layout" content="main"/>
+	<%include file="header.html"/>
+	<%block name="header_container"/>
+</head>
+<body>
+        <div id="body-container">
+            <div id="body-content">
+                    <div class="body-nav body-nav-vertical body-nav-fixed">
+                        <div class="container">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <i class="icon-dashboard icon-large"></i> 主页
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="icon-tasks icon-large"></i> 服务器详情
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="icon-cogs icon-large"></i> 代理设置
+                                    </a>
+                                </li>
+								<li>
+                                    <a href="#">
+                                        <i class="icon-bar-chart icon-large"></i> 报表详情
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="icon-list-alt icon-large"></i> Forms
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                
+                
+					<section class="nav nav-page ">
+						<div class="container">
+							<div class="row">
+								<div class="span7">
+									<header class="page-header">
+										<h3>waf管理界面<br/>
+											<small>查看攻击流量和站点设置</small>
+										</h3>
+									</header>
+								</div>
+							</div>
+						</div>
+					</section>
+					
+					
+			<section class="page container">
+					<%block name="page_container"/>
+			</section>    
+        </div>
+	</div>
+	<%include file="footer.html"/>
+    <%block name="footer_container"/>
+  </body>
+</html>

@@ -1,0 +1,342 @@
+<%inherit file="base.html"/>
+
+<%block name="page_container">
+<div class="row">
+		<div class="row">
+			<div class="span8">
+				<div class="box">
+					<div class="box-header">
+						<i class="icon-bar-chart"></i>
+						<h5>攻击类型分布</h5>
+					</div>
+					<div class="box-content">
+						<div id="piechart"  style ="height: 400px" ></div>
+						    <script type="text/javascript">
+								// 基于准备好的dom，初始化echarts实例
+								var myChart = echarts.init(document.getElementById('piechart'));
+
+								// 指定图表的配置项和数据
+								var option = {
+									tooltip : {
+										trigger: 'axis',
+										axisPointer: {
+											type: 'cross',
+											label: {
+												backgroundColor: '#6a7985'
+											}
+										}
+									},
+									legend: {
+										data:['sql注入','xss攻击','目录遍历','敏感信息泄露','恶意扫描']
+									},
+									toolbox: {
+										feature: {
+											saveAsImage: {}
+										}
+									},
+									grid: {
+										left: '3%',
+										right: '4%',
+										bottom: '3%',
+										containLabel: true
+									},
+									xAxis : [
+										{
+											type : 'category',
+											boundaryGap : false,
+											data : ['周一','周二','周三','周四','周五','周六','周日']
+										}
+									],
+									yAxis : [
+										{
+											type : 'value'
+										}
+									],
+									series : [
+										{
+											name:'sql注入',
+											type:'line',
+											stack: '总量',
+											areaStyle: {normal: {}},
+											data:[120, 132, 101, 134, 90, 230, 210]
+										},
+										{
+											name:'xss攻击',
+											type:'line',
+											stack: '总量',
+											areaStyle: {normal: {}},
+											data:[220, 182, 191, 234, 290, 330, 310]
+										},
+										{
+											name:'目录遍历',
+											type:'line',
+											stack: '总量',
+											areaStyle: {normal: {}},
+											data:[150, 232, 201, 154, 190, 330, 410]
+										},
+										{
+											name:'敏感信息泄露',
+											type:'line',
+											stack: '总量',
+											areaStyle: {normal: {}},
+											data:[320, 332, 301, 334, 390, 330, 320]
+										},
+										{
+											name:'恶意扫描',
+											type:'line',
+											stack: '总量',
+											label: {
+												normal: {
+													show: true,
+													position: 'top'
+												}
+											},
+											areaStyle: {normal: {}},
+											data:[820, 932, 901, 934, 1290, 1330, 1320]
+										}
+									]
+								};
+
+								// 使用刚指定的配置项和数据显示图表。
+								myChart.setOption(option);
+							</script>
+					</div>
+				</div>
+			</div>
+			<div class="span8">
+				<div class="box">
+					<div class="box-header">
+						<i class="icon-table"></i>
+						<h5>
+							攻击类型占比
+						</h5>
+					</div>
+					<div class="box-content">
+					<div id="echart2"  style ="height: 400px" ></div>
+											    <script type="text/javascript">
+								// 基于准备好的dom，初始化echarts实例
+								var myChart = echarts.init(document.getElementById('echart2'));
+
+								// 指定图表的配置项和数据
+
+								var option = {
+									angleAxis: {
+										type: 'category',
+										data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
+										z: 10
+									},
+									radiusAxis: {
+									},
+									polar: {
+									},
+									series: [{
+										type: 'bar',
+										data: [1, 2, 3, 4, 3, 5, 1],
+										coordinateSystem: 'polar',
+										name: '注入类攻击',
+										stack: 'a'
+									}, {
+										type: 'bar',
+										data: [2, 4, 6, 1, 3, 2, 1],
+										coordinateSystem: 'polar',
+										name: '信息泄露类',
+										stack: 'a'
+									}, {
+										type: 'bar',
+										data: [1, 2, 3, 4, 1, 2, 5],
+										coordinateSystem: 'polar',
+										name: 'XSS攻击',
+										stack: 'a'
+									}],
+									legend: {
+										show: true,
+										data: ['注入类攻击', '信息泄露类', 'XSS攻击']
+									}
+								};
+
+
+								// 使用刚指定的配置项和数据显示图表。
+								myChart.setOption(option);
+							</script>
+					</div>
+				</div>
+			</div>
+		</div>
+        <div class="row">
+		            <div class="span16">
+                        <div class="box pattern pattern-sandstone">
+                            <div class="box-header">
+                                <i class="icon-table"></i>
+                                <h5>
+                                    最近详情
+                                </h5>
+                            </div>
+                            <div class="box-content box-table">
+                                <table id="sample-table" class="table table-hover table-bordered tablesorter">
+                                    <thead>
+                                        <tr>
+                                            <th>时间</th>
+                                            <th>IP地址</th>
+											 <th>方法</th>
+                                            <th>url</th>
+											<th>user_agent</th>
+											<th>攻击类型</th>
+                                            <th class="td-actions">详情</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>2018-03-01 11:11:13</td>
+                                            <td>192.168.0.12</td>
+                                            <td>POST</td>
+                                            <td>/sqli_2.php?movie=1%27select%20now()&action=go</td>
+                                            <td>Mozilla</td>
+                                            <td>sql注入</td>
+                                            <td class="td-actions">
+                                                <a href="/infomation/id=12234">
+                                                   详情
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2018-03-02 10:11:13</td>
+                                            <td>192.168.0.22</td>
+                                            <td>POST</td>
+                                            <td>/sqli_2.php?movie=1%20and%200%3C%3E(select%20count(*)%20from%20admin)%20</td>
+                                            <td>Mozilla</td>
+                                            <td>sql注入</td>
+                                            <td class="td-actions">
+                                                <a href="/infomation/id=12234">
+                                                   详情
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+			</div>
+			<div class="row">
+				<div class="span16">
+                <div class="box pattern pattern-sandstone">
+                    <div class="box-header">
+                        <i class="icon-list"></i>
+                        <h5>Lists</h5>
+                        <button class="btn btn-box-right" data-toggle="collapse" data-target=".box-list">
+                            <i class="icon-reorder"></i>
+                        </button>
+                    </div>
+                    <div class="box-content box-list collapse in">
+                        <ul>
+                            <li>
+                                <div>
+                                    <a href="#" class="news-item-title">后大起底：OpenSSL“Heartbleed”漏洞消息发布前的惊魂72小时</a>
+                                    <p class="news-item-preview">周五一大早，Codenomicon 安全公司的 CEO Chartier 接到了一个从芬兰打来的电话，那时他才刚刚到达在硅谷的办公室。在那个平常的不能再平常的阴霾天，Chartier 同往常一样接起了电话，另一头是公司的首席网络安全工程师，他所在的网络安全队伍在全世界最大的开源加密服务 OpenSSL 中找到了一个严重漏洞。最为可怕的是，这个用于保护用户个人隐私的 OpenSSL 被几乎所有的主流网站所采用，包括 Google 和 Facebook</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a href="#" class="news-item-title">error-based injection注入型学习</a>
+                                    <p class="news-item-preview">error-based也有叫做DOUBLE QUERY INJECTION,即双查询注入,我这里主要是根据sqlmap中的命名来的，无聊写下这个，希望能够给一些没怎么搞手工注入的基友一些帮助。
+0x01:sqlmap之error-based injection
+布尔类型的盲注很简单想必大家都懂，不懂的请自行google.
+那什么是基于错误类型的注入呢？如何确定是否存在注入，如何使用该注入类型从数据库中读取自己想要的数据呢？
+我们先看一下sqlmap是如何做的？
+Sqlmap中注入的payload位于xml/payload.xml文件中 详细的列出了各种注入的判断方式和攻击方法，应该算是sqlmap的精髓部分吧？大家向我一样闲的话，可以瞅瞅此处，应该对你手工注入有帮助的。
+这里只选取其中一个error-based来看一下。（其余的请自行研究或google）</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a href="#" class="news-item-title">存储型XSS与反射型XSS有什么区别？</a>
+                                    <p class="news-item-preview">存储型XSS，持久化，代码是存储在服务器中的，如在个人信息或发表文章等地方，加入代码，如果没有过滤或过滤不严，那么这些代码将储存到服务器中，用户访问该页面的时候触发代码执行。这种XSS比较危险，容易造成蠕虫，盗窃cookie等。如：人人网又一大波蠕虫，位置在首页+登录就中招+通杀网页和人人桌面反射型XSS，非持久化，需要欺骗用户自己去点击链接才能触发XSS代码（服务器中没有这样的页面和内容），一般容易出现在搜索页面。如下面这个点击弹出自己的在该网站的cookie：http://search.bbs.tom.com/bbs.jsp?q=%22%2F%3E%3Cscript%3Ealert%28document.cookie%29%3C/script%3E%20&cmd=1&sort=3&ty=1
+
+作者：路西法
+链接：https://www.zhihu.com/question/21289758/answer/17786093
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="box-collapse">
+                            <button class="btn btn-box" data-toggle="collapse" data-target=".more-list">
+                                Show More
+                            </button>
+                        </div>
+                        <ul class="more-list collapse out">
+                            <li>
+                                <div>
+                                    <a href="#" class="news-item-title">Duis aute irure dolor in reprehenderit</a>
+                                    <p class="news-item-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a href="#" class="news-item-title">Duis aute irure dolor in reprehenderit</a>
+                                    <p class="news-item-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a href="#" class="news-item-title">Duis aute irure dolor in reprehenderit</a>
+                                    <p class="news-item-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <div class="row">
+                    <div class="span16">
+                        <div class="box">
+                            <div class="box-header">
+                                <i class="icon-folder-open"></i>
+                                <h5>Content</h5>
+                            </div>
+                            <div class="box-content">
+                                <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                </p>
+                                <p>
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                                qui officia deserunt mollit anim id est laborum.
+                                </p>
+                                <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span8">
+                        <div class="blockoff-left">
+                            <div id="barchart"></div>
+                        </div>
+                    </div>
+                </div>
+				
+				
+        <div class="row">
+            <div class="span16">
+                <div class="box">
+                    <div class="box-content">
+                        <legend class="lead">
+                            Box Component
+                        </legend>
+                        <code style="background: none;border: none;"><span class="nt">&lt;div</span>
+                            <span class="na">class=</span><span>"box"</span><span>&gt;</span>
+                            <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>&lt;div</span> <span>class=</span><span>"box-content"</span><span>&gt;</span>
+                            <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>&lt;/div&gt;</span>
+                            <br/><span>&lt;/div&gt;</span>
+                        </code><br/>
+                    </div>
+                </div>
+            </div>
+        </div>
+</%block>

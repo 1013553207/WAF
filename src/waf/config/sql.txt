@@ -1,0 +1,17 @@
+CREATE TABLE `logs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `create_time` datetime NOT NULL COMMENT '发生的时间',
+  `rule_id` int(11) NOT NULL COMMENT '那条规则导致的',
+  `ip` varchar(15) NOT NULL COMMENT '请求的ip地址',
+  `method` varchar(10) NOT NULL COMMENT '请求的方法',
+  `url` varchar(3000) NOT NULL COMMENT '请求的url, base64编码存储',
+  `args` varchar(800) DEFAULT NULL COMMENT '请求的参数, base64编码存储',
+  `path` varchar(500) DEFAULT NULL COMMENT '请求的路径',
+  `cookie` varchar(2000) DEFAULT NULL COMMENT '请求的cookie, base64编码存储',
+  `user_agent` varchar(1000) DEFAULT NULL COMMENT '请求的工具, base64编码存储',
+  `request_headers` varchar(3000) NOT NULL COMMENT '请求的头, base64编码存储',
+  `request_body` text COMMENT '请求的体, base64编码存储',
+  `response_headers` varchar(3000) NOT NULL COMMENT '响应的头, base64编码存储',
+  `response_body` text COMMENT '响应的体, base64编码存储',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9643 DEFAULT CHARSET=utf8
